@@ -28,7 +28,7 @@ By the project's deadline, this application will fulfill the following requireme
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: /wireframes
+[wireframes]: wireframes
 [components]: component-hierarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
