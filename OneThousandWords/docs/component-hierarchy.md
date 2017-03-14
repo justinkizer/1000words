@@ -1,13 +1,13 @@
 ## Component Hierarchy
 
-**Header Container**
++ **Header Container**
   + Nav
     - 1000words Home Page Link
     - Discover Page Link
     - Upload Photo Link (visible on login)
     - Login/Sign Up Links (replaced with Profile/Logout Links on login)
 
-  **Home Page Container**
+  + **Home Page Container**
     - Get Started button
     - Sub-Nav
       - Links to the 3 lower sections of the Home Page
@@ -17,7 +17,7 @@
       - List items of direct front/end text data
     - Get Started button
 
-  **Session Modal Container**
+  + **Session Modal Container**
     + Authentication Container
       + Login Form
         - Username Input field
@@ -34,7 +34,7 @@
         - Link to Login form
         - Error Component
 
-  **Profile Page Container**
+  + **Profile Page Container**
     - User Profile Avatar
     - Follow Button
     - User Profile Description
@@ -42,23 +42,23 @@
     + Photo Grid Container
       - PhotoListItems  
 
-  **Edit Profile Modal Container**
+  + **Edit Profile Modal Container**
     - Profile description
     - Button to Photo Modal Component for selecting a Profile Avatar
     - Confirmation/Submit Button
 
-  **Upload Photo Modal Container**
+  + **Upload Photo Modal Container**
     + Cloudinary Upload Photo Widget
       - File picker
       - URL field
       - Drag and Drop/Preview section
       - Confirmation/Submit Button
 
-  **Discover Page Container**
+ + **Discover Page Container**
     + Photo Grid Container
       - PhotoListItems
 
-  **Photo Show Modal Container**
+  + **Photo Show Modal Container**
     + Modal Header
       - User Profile Avatar
       - Username
