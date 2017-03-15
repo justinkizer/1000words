@@ -26,7 +26,10 @@
     username: "BestUserEver",
     profileDescription: "This is my awesome Profile Page!",
     profileImgUrl: "http://example.com/awesome_profile_pic_url.svg",
-    coverImgUrl: "http://example.com/awesome_cover_photo_url.svg"
+    coverImgUrl: "http://example.com/awesome_cover_photo_url.svg",
+    userPhotos: [],
+    follows: [],
+    followsPhotos: []
   }
 }
 ```
