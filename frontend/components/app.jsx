@@ -1,10 +1,9 @@
 import React from 'react';
-import GreetingContainer from './greetings/greeting_container.jsx';
+import MainNavBarContainer from './main_navbar/main_navbar_container.jsx';
 
 const App = ({ children }) => (
   <div>
-    <h1>1000words</h1>
-    <GreetingContainer/>
+    <MainNavBarContainer/>
     { children }
   </div>
 );

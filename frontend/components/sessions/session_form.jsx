@@ -27,19 +27,17 @@ class SessionForm extends React.Component {
     let switchFormText = link === "/join" ? "Haven't Joined Yet?" : "Already Have an Account?";
 
     return (
-      <div>
+      <div className="login-form">
         <h1>{header}</h1>
 
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.update("username")} value={this.state.username} placeholder="Username"/>
 
           <input type="password" onChange={this.update("password")} value={this.state.password} placeholder="Password"/>
-
+          <br/>
+          <br/>
           <input type="submit"></input>
         </form>
-
-        <Link to={link}>{switchFormText}</Link>
-
         <ul>
           {errors}
         </ul>

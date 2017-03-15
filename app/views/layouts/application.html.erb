@@ -9,6 +9,30 @@
   </head>
 
   <body>
+    <div class="overlay"/>
     <%= yield %>
+    <div class="hero-text">
+      <h1>A picture is worth a thousand words</h1>
+      <h2>
+        Share your stories and inspire others
+      </h2>
+      <h3>
+        Discover others' stories and be inspired
+      </h3>
+    </div>
+    <div class="hero-box">
+        <video width="1220" height="380" autoplay="autoplay" loop="loop" muted="">
+          <source src="<%= image_path('home-hero-video.mp4') %>" type="video/mp4" />
+        </video>
+        <footer>
+          <nav>
+            <a href="#">Email</a>
+            <a href="#">Github</a>
+            <a href="#">LinkedIn</a>
+            <nav>
+            </footer>
+    </div>
+
+
   </body>
 </html>

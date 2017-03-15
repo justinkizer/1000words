@@ -8,7 +8,6 @@ const Root = ({ store }) => {
 
   const redirectIfLoggedIn = () => {
     if (store.getState().session.currentUser) {
-      console.log("Made it! :)");
       hashHistory.push("/");
     }
   };

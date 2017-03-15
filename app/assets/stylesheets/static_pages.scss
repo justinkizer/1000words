@@ -1,3 +1,150 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/s
+
+.header {
+  min-width: 100%;
+}
+
+.header > nav {
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px;
+}
+
+.header > nav > a {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.header > nav > a:first-of-type {
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+}
+
+.login-form {
+  margin-left: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h1, h2, h3 {
+  font-family: sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+h2, h3 {
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.hero-text h1 {
+  padding: 0px;
+  margin-left: 5%;
+  margin-top: 10.5%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 42px;
+}
+
+.hero-text h2 {
+  padding: 0px;
+  margin-left: 12%;
+  margin-top: -0.5%;
+  color: white;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.hero-text h3 {
+  padding: 0px;
+  margin-left: 18%;
+  margin-top: 1%;
+  color: white;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  justify-content: center;
+}
+
+.hero-box > h1 {
+  position: absolute;
+  top: 145px;
+  left: 115px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 42px;
+}
+
+.hero-box > h2 {
+  position: absolute;
+  top: 225px;
+  left: 215px;
+  color: white;
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.hero-box > h3 {
+  position: absolute;
+  top: 254px;
+  left: 321px;
+  color: white;
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+video {
+  position: fixed;
+  top: 0; left: 50%;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 400%;
+  transform: translate(-50%, 0%);
+}
+
+footer {
+  min-width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+
+footer > nav {
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  z-index: 2;
+  color: white;
+  height: 25px;
+}
+
+footer > nav > a {
+  margin-left: 18%;
+  margin-right: 18%;
+}
