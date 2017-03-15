@@ -16,6 +16,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 img_url     | string    | not null
 owner_id    | integer   | not null, foreign key (references users), indexed
+description | text      |
 
 ## followings
 column name | data type | details

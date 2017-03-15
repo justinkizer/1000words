@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://one-thousand-words.herokuapp.com/
 [trello]: https://trello.com/b/dtgUqHvh/1000words
 
 ## Minimum Viable Product
@@ -36,29 +36,29 @@ By the project's deadline, this application will fulfill the following requireme
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup, Front End User Authentication, and Auth-Modals (2 days)
 
-**Objective:** Functioning Rails project with front-end Authentication
+**Objective:** Functioning Rails project with front-end Authentication, using Auth-Modals
 
-### Phase 2: Photos and Followings Model, API, and components (2 days)
+### Phase 2: Photos, Photo Grid, and Photo-Show-Modal (2 days)
 
-**Objective:** Photos and Followings can be created, read, edited and destroyed through the API.
+**Objective:** Photos can be created, read, and destroyed, with a functioning Photo Grid, and Photo-Show-Modal.
 
-### Phase 3: Photo Grid and Photo-Show/Auth-Modals (2 days)
+### Phase 3: Followings Model, API, and components (2 days)
 
-**Objective:** Photo Grid is functioning and can be reproduced throughout the site as needed, with the show and authentication modals complete.
+**Objective:** Implement followings API and its use on Photo-Show, such that users can be followed and unfollowed.
 
-### Phase 4: Discover Page and Followings (1 day)
+### Phase 4: Profile Page (1 day)
 
-**Objective:** Complete Discover page and implement followings.
+**Objective:** Profile Page is complete, with functioning Profile Edit modal and Photo Upload modal, as well as the followed users feed thereon.
 
-### Phase 5: Profile Page (1 day)
+### Phase 5: - Home Page expansion and overall Styling/Polish (1 day)
 
-**Objective:** Profile Page is complete, with functioning Profile Edit modal and Photo Upload modal.
+**Objective:** Ensure site is as polished as possible, with a consistent style throughout now that all other required portions have been completed.
 
-### Phase 6: - Home Page and overall Styling/Polish (1 day)
+### Phase 6: Discover Page (1 day)
 
-**Objective:** Ensure site is as polished as possible, with a consistent style throughout now that all other portions have been completed.
+**Objective:** Complete Discover page.
 
 ### Bonus features (TBD)
 - [ ] Discover photos feature
