@@ -15,16 +15,16 @@ export const receiveErrors = errors => ({
 
 export const signupUser = user => dispatch => (
   signup(user).then(() => dispatch(receiveCurrentUser(user)))
-    .fail(errors => dispatch(receiveErrors(errors)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const loginUser = user => dispatch => (
   login(user)
     .then(() => dispatch(receiveCurrentUser(user)))
-      .fail(errors => dispatch(receiveErrors(errors)))
+      .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const logoutUser = () => dispatch => (
   logout().then(() => dispatch(receiveCurrentUser(null)))
-    .fail(errors => dispatch(receiveErrors(errors)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );

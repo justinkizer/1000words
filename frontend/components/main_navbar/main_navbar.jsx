@@ -1,29 +1,101 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Modal } from 'react-bootstrap';
+import SessionFormContainer from '../sessions/session_form_container.jsx';
 
-const MainNavBar = props => {
-  let loginStatusDependentLinks;
-  if (props.currentUser) {
-    loginStatusDependentLinks = [
-      <Link to={"/"} key={"photoUpload"}>Upload Photo</Link>,
-      <Link to={"/"} key={"profile"}>{props.currentUser.username}</Link>,
-      <Link onClick={props.logout} key={"logout"}>Logout</Link>
-    ];
-  } else {
-    loginStatusDependentLinks = [
-      <Link to={"/join"} key={"join"}>Join</Link>,
-      <Link to={"/login"} key={"login"}>Login</Link>
-    ];
+class MainNavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showModal: false};
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.closing = false;
   }
-  return (
-    <header className="header">
-      <nav>
-        <Link to={"/"}>1000words</Link>
-        <Link to={"/"}>Discover</Link>
-        {loginStatusDependentLinks}
-      </nav>
-    </header>
-  );
+
+  close(){
+    this.closing = true;
+    this.setState({ showModal: false});
+  }
+
+  open(formType){
+    this.closing = false;
+    if (formType === "/join") {
+      this.formPath = "/join";
+    } else {
+      this.formPath = "/login";
+    }
+    this.setState({ showModal: true });
+  }
+
+  render () {
+    let loginStatusDependentLinks;
+    if (this.props.currentUser) {
+      loginStatusDependentLinks = [
+        <Link to={"/"} key={"photoUpload"}>Upload Photo</Link>,
+        <Link to={"/"} key={"profile"}>{this.props.currentUser.username}</Link>,
+        <Link onClick={this.props.logout} key={"logout"}>Logout</Link>
+      ];
+    } else {
+      loginStatusDependentLinks = [
+        <Link to={"/join"} onClick={() => this.open("/join")} key={"join"}>Join</Link>,
+        <Link to={"/login"} onClick={() => this.open("/login")} key={"login"}>Login</Link>
+      ];
+    }
+    return (
+      <header className="header">
+        <nav>
+          <Link to={"/"}>1000words</Link>
+          <Link to={"/"}>Discover</Link>
+          {loginStatusDependentLinks}
+          <Modal
+            aria-labelledby='modal-label'
+            style={modalStyle}
+            backdropStyle={backdropStyle}
+            show={this.state.showModal}
+            onHide={this.close}
+          >
+            <div style={dialogStyle()} >
+              <SessionFormContainer closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
+            </div>
+
+          </Modal>
+        </nav>
+      </header>
+    );
+  }
+}
+
+const modalStyle = {
+  position: 'fixed',
+  zIndex: 1040,
+  top: 0, bottom: 0, left: 0, right: 0
+};
+
+const backdropStyle = {
+  position: 'fixed',
+  top: 0, bottom: 0, left: 0, right: 0,
+  zIndex: 'auto',
+  backgroundColor: '#000',
+  opacity: 0.5
+};
+
+const dialogStyle = function() {
+  return {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    position: 'absolute',
+    top: "30%",
+    left: "50%",
+    color: "white",
+    fontFamily: "sans-serif",
+    transform: `translate(-50%, -50%)`,
+    // border: '1px solid #e5e5e5',
+    backgroundColor: 'rgba(0,0,0,.5)',
+    boxShadow: '0 5px 15px rgba(0,0,0,.5)',
+    padding: 20
+  };
 };
 
 export default MainNavBar;
