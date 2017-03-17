@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
-    this.toggleDisable;
   }
 
   update(field) {
@@ -92,6 +91,7 @@ class SessionForm extends React.Component {
     let errors = this.state.errors.map((error, key) =>
       <li className="error" key={key}>{error}</li>
     );
+    let disabledClass = this.toggleDisable === "disabled" ? "disabled-class" : "auth-button";
     let header = this.state.formPath === "/join" ? "Join" : "Login";
     let link = this.state.formPath === "/login" ? "/join" : "/login";
     let switchFormText = link === "/join" ? "Haven't Joined Yet?" : "Already Have an Account?";
@@ -109,10 +109,10 @@ class SessionForm extends React.Component {
             <span className="pass-tip">Passwords must be at least 6 characters</span>
           <br/>
           <br/>
-          <input type="submit" className="auth-button" value={submitButtonText} disabled={this.toggleDisable}></input>
+          <input type="submit" className={disabledClass} value={submitButtonText} disabled={this.toggleDisable}></input>
           <br/>
           <br/>
-          <button className="auth-button" onClick={this.demoLogin} disabled={this.toggleDisable}>Login as Demo User</button>
+          <button className={disabledClass} onClick={this.demoLogin} disabled={this.toggleDisable}>Login as Demo User</button>
           <br/>
           <br/>
           <Link className="switch-form-text" to={link} onClick={e => this.switchForm(e)}>{switchFormText}</Link>

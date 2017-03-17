@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { Modal } from 'react-bootstrap';
 import SessionFormContainer from '../sessions/session_form_container.jsx';
 import { hashHistory } from 'react-router';
-import TimerMixin from 'react-timer-mixin';
 
 class MainNavBar extends React.Component {
   constructor(props) {
@@ -17,7 +16,6 @@ class MainNavBar extends React.Component {
   close(){
     this.closing = true;
     this.setState({ showModal: false});
-    this.timer1 = TimerMixin.setTimeout(() => this.setState({startButtonClicked: false}), 800);
   }
 
   open(formType){
@@ -28,10 +26,6 @@ class MainNavBar extends React.Component {
       this.formPath = "/login";
     }
     this.setState({ showModal: true });
-  }
-
-  componentWillUnmount() {
-    TimerMixin.clearInterval(this.timer1);
   }
 
   render () {
@@ -70,10 +64,8 @@ class MainNavBar extends React.Component {
           <div className="main-navbar-background"/>
         </nav>
         <button className="here-button" onClick={() => {
-              this.setState({startButtonClicked: true});
               if (this.props.currentUser) {
                 hashHistory.push("/");
-                this.timer1 = TimerMixin.setTimeout(() => this.setState({startButtonClicked: false}), 800);
               } else {
                 this.open("/join");
               }
