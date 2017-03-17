@@ -51,12 +51,12 @@ class MainNavBar extends React.Component {
           {loginStatusDependentLinks}
           <Modal
             aria-labelledby='modal-label'
-            style={modalStyle}
+            className="modal-style"
             backdropStyle={backdropStyle}
             show={this.state.showModal}
             onHide={this.close}
           >
-            <div style={dialogStyle()} >
+            <div className="auth-modal-dialog" >
               <SessionFormContainer closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
             </div>
 
@@ -75,39 +75,12 @@ class MainNavBar extends React.Component {
   }
 }
 
-const modalStyle = {
-  position: 'fixed',
-  zIndex: 1040,
-  top: 0, bottom: 0, left: 0, right: 0
-};
-
 const backdropStyle = {
   position: 'fixed',
   top: 0, bottom: 0, left: 0, right: 0,
   zIndex: 'auto',
   backgroundColor: '#000',
   opacity: 0.5
-};
-
-const dialogStyle = function() {
-  return {
-    borderRadius: "6px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    position: 'absolute',
-    top: "30%",
-    left: "50%",
-    color: "white",
-    minHeight: "280px",
-    minWidth: "250px",
-    fontFamily: "sans-serif",
-    transform: `translate(-50%, -50%)`,
-    backgroundColor: 'rgba(0,0,0,.6)',
-    boxShadow: '0 5px 15px rgba(0,0,0,.5)',
-    padding: "20px",
-  };
 };
 
 export default MainNavBar;
