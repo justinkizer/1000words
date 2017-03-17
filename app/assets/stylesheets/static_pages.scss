@@ -8,7 +8,6 @@ input:focus, a:focus, button:focus {
 }
 
 a:hover {
-  outline: none !important;
   opacity: .75;
 }
 
@@ -26,17 +25,13 @@ a:hover {
   outline-color: rgba(255,255,255,.5);
 }
 
-[data-whatinput="touch"] :focus {
-  outline-color: none;
-}
-
 .main-navbar-background {
   position: fixed;
   height: 60px;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: -1;
   background-color: #000;
   opacity: 0.07;
 }
@@ -54,7 +49,7 @@ a:hover {
 .header > nav > a {
   margin-right: 20px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
   font-size: 17px;
   text-shadow: 0px 0px 2px dimgray;
 }
@@ -135,6 +130,10 @@ a {
   background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef2f4', endColorstr='#f9fafb',GradientType=0 ); /* IE6-9 */
   transition: ease-in-out;
+}
+
+.login-form input:focus {
+  box-shadow: inset 0 0 12px rgb(0, 128, 255);
 }
 
 .login-form .auth-button {
@@ -407,7 +406,7 @@ input.disabled-class {
 video {
   position: fixed;
   top: 0; left: 50%;
-  z-index: -1;
+  z-index: -2;
   min-width: 100%;
   min-height: 100%;
   width: auto;
