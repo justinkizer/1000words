@@ -4,9 +4,10 @@ import { signupUser, loginUser } from '../../actions/session_actions.js';
 import SessionForm from './session_form.jsx';
 
 const mapStateToProps = (state, ownProps) => ({
-  loggedIn: state.session.currentUser,
+  currentUser: state.session.currentUser,
   errors: state.session.errors,
-  closing: ownProps.closing
+  closing: ownProps.closing,
+  rootPath: ownProps.rootPath
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -14,13 +14,13 @@ export const receiveErrors = errors => ({
 });
 
 export const signupUser = user => dispatch => (
-  signup(user).then(() => dispatch(receiveCurrentUser(user)))
+  signup(user).then(user1 => dispatch(receiveCurrentUser(user1)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const loginUser = user => dispatch => (
   login(user)
-    .then(() => dispatch(receiveCurrentUser(user)))
+    .then((user1) => dispatch(receiveCurrentUser(user1)))
       .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 

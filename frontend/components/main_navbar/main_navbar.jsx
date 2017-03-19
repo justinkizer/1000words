@@ -7,18 +7,31 @@ import { hashHistory } from 'react-router';
 class MainNavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showModal: false, startButtonClicked: false};
+    this.state = {showModal: false};
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.closing = false;
   }
 
+  componentWillReceiveProps(newProps) {
+    if (!this.props.currentUser && newProps.hereButtonClicked) {
+      this.open("/join");
+      this.props.resetHereButtonClicked();
+    }
+  }
+
   close(){
     this.closing = true;
+    if (this.props.resetHereButtonClicked) {
+      this.props.resetHereButtonClicked();
+    }
     this.setState({ showModal: false});
   }
 
   open(formType){
+    if (this.props.currentUser) {
+      hashHistory.push(`/users/${this.props.currentUser.id}`);
+    }
     this.closing = false;
     if (formType === "/join") {
       this.formPath = "/join";
@@ -30,16 +43,17 @@ class MainNavBar extends React.Component {
 
   render () {
     let loginStatusDependentLinks;
+    let hereButton = this.props.rootPath !== "/" ? "disabled" : "here-button";
     if (this.props.currentUser) {
       loginStatusDependentLinks = [
         <Link to={"/"} key={"photoUpload"}>Upload Photo</Link>,
-        <Link to={"/"} key={"profile"}>{this.props.currentUser.username}</Link>,
-        <Link onClick={this.props.logout} key={"logout"}>Logout</Link>
+        <Link to={`/users/${this.props.currentUser.id}`} key={"profile"}>{this.props.currentUser.username}</Link>,
+        <Link to={"/"} onClick={this.props.logout} key={"logout"}>Logout</Link>
       ];
     } else {
       loginStatusDependentLinks = [
-        <Link to={"/join"} onClick={() => this.open("/join")} key={"join"}>Join</Link>,
-        <Link to={"/login"} onClick={() => this.open("/login")} key={"login"}>Login</Link>
+        <button to={""} onClick={() => this.open("/join")} key={"join"}>Join</button>,
+        <button to={""} onClick={() => this.open("/login")} key={"login"}>Login</button>
       ];
     }
 
@@ -57,19 +71,15 @@ class MainNavBar extends React.Component {
             onHide={this.close}
           >
             <div className="auth-modal-dialog" >
-              <SessionFormContainer closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
+              <SessionFormContainer rootPath={this.props.rootPath} closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
             </div>
 
           </Modal>
           <div className="main-navbar-background"/>
         </nav>
-        <button className="here-button" onClick={() => {
-              if (this.props.currentUser) {
-                hashHistory.push("/");
-              } else {
-                this.open("/join");
-              }
-          }} data-hover="join"><span>here</span></button>
+        <button className={hereButton} onClick={() => (
+          this.open("/join"))} data-hover="join"><span>here</span>
+        </button>
       </header>
     );
   }

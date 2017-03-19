@@ -3,40 +3,11 @@
   <head>
     <title>1000words</title>
     <%= csrf_meta_tags %>
-    
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script src="http://widget.cloudinary.com/global/all.js"></script>
   </head>
-
   <body>
     <%= yield %>
-
-    <div class="hero-text">
-      <h1>A picture is worth a thousand words</h1>
-      <h2>
-        Share your stories and inspire others
-      </h2>
-      <h3>
-        Discover new stories and stay inspired
-      </h3>
-      <h4>
-        Begin your journey
-      </h4>
-    </div>
-    <div>
-        <video width="1220" height="380" autoplay="autoplay" loop="loop" muted="">
-          <source src="<%= image_path('home-hero-video.mp4') %>" type="video/mp4" />
-        </video>
-        <footer>
-          <nav>
-            <a href="#">Email</a>
-            <a href="https://github.com/justinkizer">Github</a>
-            <a href="#">LinkedIn</a>
-            <div class="footer-background"/>
-            <nav>
-        </footer>
-    </div>
-
-
   </body>
 </html>

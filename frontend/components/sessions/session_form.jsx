@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (!newProps.loggedIn && !newProps.closing) {
+    if (!newProps.currentUser && !newProps.closing) {
     this.setState({errors: newProps.errors});
     }
   }
@@ -42,9 +42,17 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.formPath === "/login") {
-      this.props.loginUser(this.state).then(this.props.closeModal);
+      this.props.loginUser(this.state).then(this.props.closeModal).then(() => {
+        if (this.props.rootPath === "/") {
+          hashHistory.push(`/users/${this.props.currentUser.id}`);
+        }
+      });
     } else {
-      this.props.signupUser(this.state).then(this.props.closeModal);
+      this.props.signupUser(this.state).then(this.props.closeModal).then(() => {
+        if (this.props.rootPath === "/") {
+          hashHistory.push(`/users/${this.props.currentUser.id}`);
+        }
+      });
     }
   }
 
@@ -76,7 +84,11 @@ class SessionForm extends React.Component {
       this.timer4 = TimerMixin.setInterval(() => { passwordCount++; }, 40);
     }, 550);
     TimerMixin.setTimeout(() => {
-      this.props.loginUser(this.state).then(this.props.closeModal);
+      this.props.loginUser(this.state).then(this.props.closeModal).then(() => {
+        if (this.props.rootPath === "/") {
+          hashHistory.push(`/users/${this.props.currentUser.id}`);
+        }
+      });
     }, 1250);
   }
 
@@ -84,13 +96,12 @@ class SessionForm extends React.Component {
     e.preventDefault();
     let link = this.state.formPath === "/login" ? "/join" : "/login";
     this.setState(() => ({formPath: link, errors: []}));
-    hashHistory.replace(link);
   }
 
   render () {
-    let errors = this.state.errors.map((error, key) =>
+    let errors = this.state.errors ? this.state.errors.map((error, key) =>
       <li className="error" key={key}>{error}</li>
-    );
+    ) : undefined;
     let disabledClass = this.toggleDisable === "disabled" ? "disabled-class" : "auth-button";
     let header = this.state.formPath === "/join" ? "Join" : "Login";
     let link = this.state.formPath === "/login" ? "/join" : "/login";
@@ -115,7 +126,7 @@ class SessionForm extends React.Component {
           <button className={disabledClass} onClick={this.demoLogin} disabled={this.toggleDisable}>Login as Demo User</button>
           <br/>
           <br/>
-          <Link className="switch-form-text" to={link} onClick={e => this.switchForm(e)}>{switchFormText}</Link>
+          <button className="switch-form-text" to={""} onClick={e => this.switchForm(e)}>{switchFormText}</button>
         </form>
         <ul className="errors">
           {errors}
