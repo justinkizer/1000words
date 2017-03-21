@@ -25,7 +25,7 @@
 - `GET /api/photos`
 - `POST /api/photos`
 - `GET /api/photos/:id`
-- `DELETE /api/notes/:id`
+- `DELETE /api/photos/:id`
 
 ### Followings
 

@@ -8,6 +8,9 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :photos,
+    foreign_key: :owner_id
+
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     return @user if @user && @user.is_password?(password)

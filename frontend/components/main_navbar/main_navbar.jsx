@@ -10,6 +10,8 @@ class MainNavBar extends React.Component {
     this.state = {showModal: false};
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.upload = this.upload.bind(this);
+    this.createPhoto = this.props.createPhoto.bind(this);
     this.closing = false;
   }
 
@@ -41,12 +43,27 @@ class MainNavBar extends React.Component {
     this.setState({ showModal: true });
   }
 
+  upload(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
+      if (!error) {
+        if (results.length > 1) {
+          for (let i = 0; i < results.length; i++) {
+            this.createPhoto(results[i]);
+          }
+        } else {
+          this.createPhoto(results[0]);
+        }
+      }
+    });
+  }
+
   render () {
     let loginStatusDependentLinks;
     let hereButton = this.props.rootPath !== "/" ? "disabled" : "here-button";
     if (this.props.currentUser) {
       loginStatusDependentLinks = [
-        <Link to={"/"} key={"photoUpload"}>Upload Photo</Link>,
+        <Link to={""} onClick={this.upload} key={"photoUpload"}>Upload Photo</Link>,
         <Link to={`/users/${this.props.currentUser.id}`} key={"profile"}>{this.props.currentUser.username}</Link>,
         <Link to={"/"} onClick={this.props.logout} key={"logout"}>Logout</Link>
       ];
@@ -60,7 +77,7 @@ class MainNavBar extends React.Component {
     return (
       <header className="header">
         <nav>
-          <Link to={"/"}>1000words</Link>
+          <Link to={"/"}>1000<p>words</p></Link>
           <Link to={"/"}>Discover</Link>
           {loginStatusDependentLinks}
           <Modal

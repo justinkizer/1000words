@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314214254) do
+ActiveRecord::Schema.define(version: 20170320153359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "photos", force: :cascade do |t|
+    t.text     "img_url",     null: false
+    t.integer  "owner_id",    null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["img_url"], name: "index_photos_on_img_url", using: :btree
+    t.index ["owner_id"], name: "index_photos_on_owner_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -23,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170314214254) do
     t.text     "profile_img_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "cover_img_url"
+    t.index ["cover_img_url"], name: "index_users_on_cover_img_url", using: :btree
     t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end

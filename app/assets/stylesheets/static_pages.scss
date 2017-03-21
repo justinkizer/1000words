@@ -11,6 +11,7 @@ body {
   right:0px;
   bottom:0px;
   overflow-y:scroll;
+  overflow-x: hidden;
 }
 
 input:focus, a:focus, button:focus {
@@ -44,7 +45,11 @@ a:hover,.header > nav > button:hover {
   right: 0;
   z-index: -1;
   background-color: #000;
-  opacity: 0.07;
+  opacity: 0.175;
+}
+
+.not-transparent {
+  opacity: 1;
 }
 
 .header > nav {
@@ -69,6 +74,19 @@ a:hover,.header > nav > button:hover {
   text-shadow: 0px 0px 2px dimgray;
 }
 
+.header > nav > a > p {
+  margin-right: 0px;
+  font-style: italic;
+  padding: 0px;
+  cursor: pointer;
+  z-index: 0;
+  font-size: 14px;
+  text-shadow: 0px 0px 2px dimgray;
+  top: -65%;
+  left: 101.5%;
+  position: absolute;
+}
+
 .header > nav > button {
   background: none;
   border: none;
@@ -79,18 +97,23 @@ a:hover,.header > nav > button:hover {
   font-size: 17px;
   text-shadow: 0px 0px 2px dimgray;
   text-decoration: none;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
 }
 
 .header > nav > a:first-of-type {
+  position: relative;
   margin-right: auto;
   font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  font-size: 19px;
+  margin-left: 20px;
 }
 
 a {
   text-decoration: none;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
 }
 
@@ -103,7 +126,7 @@ a, button {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 14px;
   text-decoration: underline;
@@ -238,7 +261,7 @@ input.disabled-class {
 
 .hero-text > h1, .hero-text > h2, .hero-text > h3{
   font-family: sans-serif;
-  color: FloralWhite;
+  color: white;
   font-size: 20px;
 }
 
@@ -251,7 +274,7 @@ input.disabled-class {
   padding: 0px;
   margin-left: 11%;
   margin-top: 10.5%;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
@@ -306,7 +329,7 @@ input.disabled-class {
   padding: 0px;
   margin-left: 14%;
   margin-top: -3%;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
@@ -322,7 +345,7 @@ input.disabled-class {
   padding: 0px;
   margin-left: 21%;
   margin-top: 1%;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
@@ -340,7 +363,7 @@ input.disabled-class {
   left:50%;
   top:35%;
   transform: translate(-50%, -50%);
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
@@ -363,7 +386,7 @@ input.disabled-class {
   width: 125px;
   height: 50px;
   overflow: hidden;
-  color: FloralWhite;
+  color: white;
   font-family: sans-serif;
   font-size: 42px;
   font-weight: bolder;
@@ -461,7 +484,7 @@ video {
   right: 0;
   z-index: 0;
   background-color: #000;
-  opacity: 0.07;
+  opacity: 0.175;
 }
 
 footer {
@@ -476,7 +499,7 @@ footer > nav {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
-  color: FloralWhite;
+  color: white;
   height: 25px;
 }
 
@@ -503,9 +526,9 @@ footer > nav > a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
-  color: FloralWhite;
+  color: white;
   min-height: 280px;
   min-width: 250px;
   font-family: sans-serif;
@@ -538,61 +561,112 @@ footer > nav > a {
     opacity: 1;
   }
 }
-//
-.profile-photo {
+
+.profile-and-description {
   position: absolute;
-  top: -11.5%;
-  left: 41.5%;
+  top: -14%;
+  left: -1%;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+
+.profile-photo {
+  padding-bottom: 20px;
+  // position: absolute;
+  // top: -11.5%;
+  // left: 41.5%;
+  // z-index: 1;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   -webkit-filter: drop-shadow(0px 0px 5px dimgray);
   filter: drop-shadow(0px 0px 5px dimgray);
 }
 
-// .cover-photo-spacer {
-  // background-color: #ffffff;
-  // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  // position: absolute;
-  // top: 80%;
-  // min-width: 101.5%;
-  // min-height: 100%;
-  // z-index: 0;
-  // transform: translate(-1%, 0%);
-// }
-
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  z-index: -1;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective-origin-x: 100%;
-  transform: translate(-0.60%, -10.5%);
-  min-width: 101.2%;
-}
-
-.parallax__layer {
+.username-and-description {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  transform-origin-x: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 91%;
+  // left: -2.5%;
+  z-index: 1;
+  list-style: none;
+  font-family: sans-serif;
+  color: gray;
+  font-size: 16px;
+  min-width: 100%;
 }
-.parallax__layer--base {
+
+.username-and-description li:first-of-type {
+  // position: absolute;
+  left: 40.5%;
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.cover-photo-spacer {
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   position: absolute;
-  top: 80%;
+  top: 65%;
   min-width: 101.5%;
   min-height: 100%;
   z-index: 0;
   transform: translate(-1%, 0%);
-  transform: translateZ(0);
+}
+
+.parallax {
+  // perspective: 1px;
+  // height: 125vh;
+  // z-index: -1;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  // perspective-origin-x: 100%;
+  // transform: translate(-0.60%, -10.5%);
+  // min-width: 101.2%;
+}
+
+.parallax__layer {
+  // height: 100vh;
+  // position: absolute;
+  // transform-origin-x: 100%;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+}
+.parallax__layer--base {
+  // height: 40vh;
+  // background-color: #ffffff;
+  // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  // position: absolute;
+  // top: 65%;
+  // min-width: 101.5%;
+  // // min-height: 200%;
+  // z-index: 0;
+  // transform: translate(-1%, 0%);
+  // transform: translateZ(0);
 }
 .parallax__layer--back {
-  transform: translateZ(-1px) scale(2);
-  min-width: 100%;
+  position: fixed;
+  top: 0; left: 50%;
   z-index: -2;
+  min-width: 100%;
+  // min-height: 100%;
+  max-height: 100%;
+  max-width: 400%;
+  transform: translate(-50%, 0%);
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   animation: fadePersist2;
   animation-delay: 0s;
   animation-duration: 1s;
@@ -600,29 +674,76 @@ footer > nav > a {
   animation-fill-mode: forwards;
   opacity: 0.5;
 }
+// .cover-photo-spacer {
+//   background-color: #ffffff;
+//   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+//   position: absolute;
+//   top: 80%;
+//   min-width: 101.5%;
+//   min-height: 45%;
+//   z-index: 0;
+//   transform: translate(-1%, 0%);
+// }
+//
+// .parallax {
+//   perspective: 1px;
+//   height: 125vh;
+//   z-index: -1;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective-origin-x: 100%;
+//   transform: translate(-0.60%, -10.5%);
+//   min-width: 101.2%;
+// }
+//
+// .parallax__layer {
+//   height: 100vh;
+//   position: absolute;
+//   transform-origin-x: 100%;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
+// .parallax__layer--base {
+//   height: 40vh;
+//   background-color: #ffffff;
+//   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+//   position: absolute;
+//   top: 65%;
+//   min-width: 101.5%;
+//   // min-height: 200%;
+//   z-index: 0;
+//   transform: translate(-1%, 0%);
+//   transform: translateZ(0);
+// }
+// .parallax__layer--back {
+//   height: 100vh;
+//   transform: translateZ(-1px) scale(2);
+//   transform: translateY(-5%);
+//   min-width: 100%;
+//   z-index: -2;
+  // animation: fadePersist2;
+  // animation-delay: 0s;
+  // animation-duration: 1s;
+  // animation-iteration-count: 1;
+  // animation-fill-mode: forwards;
+  // opacity: 0.5;
+// }
 
 .edit-button, .follow-button {
   position: absolute;
-  top: 3%;
+  top: 60%;
   left: 88.5%;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: bolder;
-  color: FloralWhite;
+  color: white;
   width: 118px;
   height: 32px;
   z-index: 1;
   filter: drop-shadow(0px 0px 1px dimgray);
   filter: drop-shadow(0px 0px 1px dimgray);
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#65bde3+48,5db2df+59,70aee4+100 */
-  background: rgb(101,189,227); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(101,189,227,1) 48%, rgba(93,178,223,1) 59%, rgba(112,174,228,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65bde3', endColorstr='#70aee4',GradientType=0 ); /* IE6-9 */
-}
-
-.edit-button:hover, .follow-button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4eadd6+48,49a1d1+59,589bd6+100 */
   background: rgb(78,173,214); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%); /* FF3.6-15 */
@@ -631,32 +752,21 @@ footer > nav > a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4eadd6', endColorstr='#589bd6',GradientType=0 ); /* IE6-9 */
 }
 
-.username-and-description {
-  position: absolute;
-  top: 91%;
-  left: 27.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  font-family: sans-serif;
-  color: gray;
-  font-size: 16px;
-}
-
-.username-and-description li:first-of-type {
-  font-weight: bold;
-  font-size: 18px;
-  padding-bottom: 10px;
+.edit-button:hover, .follow-button:hover {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#65bde3+48,5db2df+59,70aee4+100 */
+  background: rgb(101,189,227); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(101,189,227,1) 48%, rgba(93,178,223,1) 59%, rgba(112,174,228,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65bde3', endColorstr='#70aee4',GradientType=0 ); /* IE6-9 */
 }
 
 .user-profile-nav {
   position: absolute;
   padding: 0px;
-  top: 103%;
-  left: 37.5%;
-  min-width: 24%;
+  top: 125%;
+  // left: 37.5%;
+  min-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -667,15 +777,22 @@ footer > nav > a {
   font-size: 16px;
 }
 
-.user-profile-nav li {
+.user-profile-nav li a {
   position: relative;
   border-right: 1px solid gray;
-  padding-right: 24px;
+  padding-right: 40px;
   cursor: pointer;
+  color: gray
 }
 
 .user-profile-nav li:last-of-type {
   border-right: none;
+  margin-right: 34%;
+}
+
+.user-profile-nav li:first-of-type {
+  border-left: none;
+  margin-left: 36%;
 }
 
 .user-profile-nav li:hover {
@@ -683,10 +800,51 @@ footer > nav > a {
 }
 
 .photo-grid {
+  // margin: 0 -500rem;
+/* add back negative margin value */
+  // padding: 0.25rem 500rem;
+  // overflow-x: hidden;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   position: absolute;
-  top: 120%;
-  left: 45%;
-  font-family: sans-serif;
-  color: gray;
-  font-size: 16px;
+  top: 105%;
+  left: 0%;
+  // margin-top: 60px;
+  margin-right: -2%;
+  margin-left: -2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  -moz-column-width: 25em;
+  -webkit-column-width: 25em;
+  -moz-column-gap: 0.5em;
+  -webkit-column-gap: 0.5em;
+}
+
+.grid-image {
+  box-sizing:  border-box;
+  display: inline-block;
+  margin:  0.25rem;
+  padding:  1rem;
+  width:  100%;
+  transition-timing-function: ease-in-out;
+  transition-delay: .1s;
+  // filter: drop-shadow(0px 0px 5px rgba(123,123,123,.75));
+}
+
+.photo-grid > a:hover {
+  opacity: 1;
+}
+
+.grid-image:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.075);
+  // width: 101%;
+  // height: 101%;
+  // -webkit-filter: brightness(115%);
+  // transition-timing-function: ease-in-out;
+  // -webkit-transition-delay: .1s;
+  // -moz-transition-delay: .1s;
+  // -o-transition-delay: .1s;
+  // transition-delay: .1s;
+  // transition-duration: .5s;
 }
