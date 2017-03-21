@@ -20,8 +20,8 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.update({photosChoice: this.props.userPhotos}),100);
-    setTimeout(AOS.refreshHard,500);
+    setTimeout(() => this.update({photosChoice: this.props.userPhotos}),500);
+    setTimeout(AOS.refreshHard,1000);
   }
 
   componentWillReceiveProps(newProps) {
@@ -29,6 +29,7 @@ class ProfilePage extends React.Component {
       this.props.fetchUser(newProps.params.id);
       this.props.fetchUserPhotos(newProps.params.id).then(photos => {
         this.setState({photosChoice: photos.photos});
+        setTimeout(AOS.refreshHard,500);
       });
     }
   }
@@ -38,12 +39,15 @@ class ProfilePage extends React.Component {
       if (photos === "followed") {
         this.setState({photosChoice: this.props.followsPhotos});
         setTimeout(AOS.refreshHard,100);
+        setTimeout(AOS.refreshHard,300);
       } else if (photos === "mine") {
         this.setState({photosChoice: this.props.userPhotos});
         setTimeout(AOS.refreshHard,100);
+        setTimeout(AOS.refreshHard,300);
       } else {
         this.setState({photosChoice: this.props.discoverPhotos});
         setTimeout(AOS.refreshHard,100);
+        setTimeout(AOS.refreshHard,300);
       }
     };
   }

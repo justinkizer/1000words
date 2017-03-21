@@ -44,7 +44,7 @@ class PhotoGrid extends React.Component {
     let photos;
     let selectedPhotoUrl;
     if (this.state.selectedPhoto) {
-      selectedPhotoUrl = this.state.selectedPhoto.img_url;
+      selectedPhotoUrl = this.state.selectedPhoto.img_url.replace(/\w_0.50\//,"");
     }
     if (this.props.photos) {
       this.photos = this.props.photos;

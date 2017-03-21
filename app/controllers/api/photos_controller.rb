@@ -12,9 +12,13 @@ class Api::PhotosController < ApplicationController
 
   def index
     if params[:user_id]
-      @photos = User.find(params[:user_id]).photos
+      @photos = User.find(params[:user_id]).photos.each do |photo|
+        photo.img_url = photo.img_url.split("/upload/").join("/upload/w_0.50/")
+      end
     else
-      @photos = Photo.all
+      @photos = Photo.all.each do |photo|
+        photo.img_url = photo.img_url.split("/upload/").join("/upload/w_0.50/")
+      end
     end
     render :index
   end
