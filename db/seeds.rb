@@ -100,7 +100,11 @@ Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/uplo
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490053775/n8iqhcgd65ve9hl6t8eq.png", owner_id: 2})
 
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490121667/hrvdycnourbtf4tawmjq.jpg", owner_id: 2})
+
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490071478/vwtrqtxz2jzo2zpagont.jpg", owner_id: 2})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490122223/x02hpywikhr8u4n9sroa.jpg", owner_id: 2})
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490072385/afl3oujujzdgotvepdgt.jpg", owner_id: 2})
 
@@ -116,6 +120,8 @@ Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/uplo
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490073362/egbik99radyclbak1xmk.png", owner_id: 2})
 
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490120527/qg4kfwhbefkcnf0vibf1.jpg", owner_id: 2})
+
 ########
 # Leia:
 ########
@@ -123,6 +129,20 @@ Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/uplo
 User.create(id: 3, username: "Leia", password: "123123", profile_desc: "#REBEL WITH A CAUSE", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_450,h_350,c_crop,g_face,r_max/w_200/v1490073822/ek1qz4sq20xvt8z9cpc7.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg")
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076970/k6ekqy9wde8kfjdjo1bp.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490114620/cm0hwlcfnlves4ae2u5m.jpg", owner_id: 3})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490118179/xi541lhrcmtpuetmurax.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119655/owhqgvn5aogvwdqkmi3u.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490120000/doukox1jfsstondr4rmf.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118659/bdbtjnlulp5odh9wmql3.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119435/rbbndufpexxnbdmysrta.jpg", owner_id: 3})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118514/yhaklkzeehsapvgsbjfd.jpg", owner_id: 3})
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/tp4uwfwfvuondpij43ty.jpg", owner_id: 3})
 

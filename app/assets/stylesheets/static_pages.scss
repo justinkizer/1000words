@@ -663,8 +663,9 @@ footer > nav > a {
   min-width: 100%;
   // min-height: 100%;
   max-height: 100%;
+  min-height: 85vh;
   max-width: 400%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -5%);
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   animation: fadePersist2;
@@ -777,6 +778,18 @@ footer > nav > a {
   font-size: 16px;
 }
 
+.no-photos-found {
+  position: absolute;
+  padding: 0px;
+  margin-top: 10%;
+  left: 38.5vw;
+  min-width: 100%;
+  font-family: sans-serif;
+  color: gray;
+  font-size: 14px;
+  margin-top: 4%;
+}
+
 .user-profile-nav li a {
   position: relative;
   border-right: 1px solid gray;
@@ -806,10 +819,10 @@ footer > nav > a {
   // overflow-x: hidden;
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  position: absolute;
-  top: 105%;
+  position: relative;
+  margin-top: 86vh;
   left: 0%;
-  // margin-top: 60px;
+  // transform: translateY(10%);
   margin-right: -2%;
   margin-left: -2%;
   padding-left: 2%;
@@ -856,8 +869,8 @@ footer > nav > a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   color: white;
   font-family: sans-serif;
   transform: translate(-50%, -50%);
@@ -868,12 +881,45 @@ footer > nav > a {
   width: auto;
   height: auto;
   max-height: 85vh;
+  animation: fadePersist;
+  animation-delay: 0s;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .photo-modal-dialog > img {
   max-width: 85vw;
   max-height: 85vh;
+  min-height: 85vh;
   object-fit: contain;
   width: auto;
   height: auto;
+}
+
+.delete-button-spacer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.delete-button {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+  color: white;
+  width: 118px;
+  height: 32px;
+  z-index: 6;
+  filter: drop-shadow(0px 0px 1px dimgray);
+  filter: drop-shadow(0px 0px 1px dimgray);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4eadd6+48,49a1d1+59,589bd6+100 */
+  background: rgb(78,173,214); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4eadd6', endColorstr='#589bd6',GradientType=0 ); /* IE6-9 */
 }

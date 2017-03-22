@@ -54,6 +54,7 @@ class MainNavBar extends React.Component {
         } else {
           this.createPhoto(results[0]);
         }
+        setTimeout(this.props.resetAfterAdd, 250);
       }
     });
   }

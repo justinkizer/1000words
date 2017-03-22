@@ -4,6 +4,7 @@ import * as PhotosAPIUtil from '../util/photos_api_util.js';
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USER_PHOTOS = "RECEIVE_USER_PHOTOS";
 export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO";
+export const REMOVE_PHOTO = "REMOVE_PHOTO";
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
@@ -27,6 +28,11 @@ export const receiveNewPhoto = photo => ({
   photo
 });
 
+export const removePhoto = photo => ({
+  type: REMOVE_PHOTO,
+  photo
+});
+
 export const receiveAllPhotos = photos => ({
   type: RECEIVE_ALL_PHOTOS,
   photos
@@ -44,6 +50,11 @@ export const fetchUserPhotos = id => dispatch => (
 
 export const createPhoto = photo => dispatch => (
   PhotosAPIUtil.createPhoto(photo).then(newPhoto => dispatch(receiveNewPhoto(newPhoto)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+);
+
+export const deletePhoto = id => dispatch => (
+  PhotosAPIUtil.deletePhoto(id).then(() => dispatch(removePhoto(id)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 

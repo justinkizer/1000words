@@ -11,6 +11,7 @@ class ProfilePage extends React.Component {
     this.state = {photosChoice: undefined};
     this.choice.bind(this);
     this.update = this.setState.bind(this);
+    this.resetAfterAddOrDelete = this.resetAfterAddOrDelete.bind(this);
   }
 
   componentWillMount() {
@@ -19,9 +20,16 @@ class ProfilePage extends React.Component {
     this.props.fetchAllPhotos();
   }
 
+  resetAfterAddOrDelete() {
+    this.props.fetchUserPhotos().then(photos => {
+      this.setState({photosChoice: photos.photos});
+      setTimeout(AOS.refreshHard, 500);
+    });
+  }
+
   componentDidMount() {
-    setTimeout(() => this.update({photosChoice: this.props.userPhotos}),500);
-    setTimeout(AOS.refreshHard,1000);
+    setTimeout(() => this.update({photosChoice: this.props.userPhotos}), 500);
+    setTimeout(AOS.refreshHard, 1000);
   }
 
   componentWillReceiveProps(newProps) {
@@ -38,24 +46,28 @@ class ProfilePage extends React.Component {
     return () => {
       if (photos === "followed") {
         this.setState({photosChoice: this.props.followsPhotos});
-        setTimeout(AOS.refreshHard,100);
-        setTimeout(AOS.refreshHard,300);
+        setTimeout(AOS.refreshHard,600);
+        // setTimeout(AOS.refreshHard,900);
       } else if (photos === "mine") {
         this.setState({photosChoice: this.props.userPhotos});
         setTimeout(AOS.refreshHard,100);
-        setTimeout(AOS.refreshHard,300);
+        // setTimeout(AOS.refreshHard,300);
       } else {
         this.setState({photosChoice: this.props.discoverPhotos});
-        setTimeout(AOS.refreshHard,100);
-        setTimeout(AOS.refreshHard,300);
+        setTimeout(AOS.refreshHard,600);
+        // setTimeout(AOS.refreshHard,100);
       }
     };
   }
 
   render() {
+    let completionBasedDescription;
     let followOrEditProfileButton = <FollowButton />;
     if (this.props.currentUser && (this.props.currentUser.id === parseInt(this.props.userId))) {
       followOrEditProfileButton = <EditProfileButton />;
+      completionBasedDescription = this.props.profileDesc || 'Thanks for joining! Customize your profile now or start exploring!';
+    } else {
+      completionBasedDescription = this.props.profileDesc || "This user hasn't written a Profile Description yet, but feel free to imagine something really inspiring!";
     }
     let photosChoice = this.state.photosChoice;
     return (
@@ -67,7 +79,7 @@ class ProfilePage extends React.Component {
             <img className="profile-photo" src={this.props.profileImgUrl}></img>
             <ul className="username-and-description">
               <li>{this.props.username}</li>
-              <li>{this.props.profileDesc}</li>
+              <li>{completionBasedDescription}</li>
             </ul>
             <a name="profile-nav" />
             <ul className="user-profile-nav">
@@ -79,8 +91,8 @@ class ProfilePage extends React.Component {
             </div>
           </div>
         </div>
-        <PhotoGrid photos={photosChoice} />
-        <MainNavBarContainer />
+        <PhotoGrid resetAfterDelete={this.resetAfterAddOrDelete} currentUser={this.props.currentUser} photos={photosChoice} />
+        <MainNavBarContainer resetAfterAdd={this.resetAfterAddOrDelete}/>
       </div>
     );
   }
