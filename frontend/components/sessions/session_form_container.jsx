@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   errors: state.session.errors,
   closing: ownProps.closing,
-  rootPath: ownProps.rootPath
+  rootPath: ownProps.rootPath,
+  followUponLogin: ownProps.followUponLogin
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

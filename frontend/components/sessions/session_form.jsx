@@ -45,12 +45,16 @@ class SessionForm extends React.Component {
       this.props.loginUser(this.state).then(this.props.closeModal).then(() => {
         if (this.props.rootPath === "/") {
           hashHistory.push(`/users/${this.props.currentUser.id}`);
+        } else if (this.props.followUponLogin) {
+          this.props.followUponLogin();
         }
       });
     } else {
       this.props.signupUser(this.state).then(this.props.closeModal).then(() => {
         if (this.props.rootPath === "/") {
           hashHistory.push(`/users/${this.props.currentUser.id}`);
+        } else if (this.props.followUponLogin) {
+          this.props.followUponLogin();
         }
       });
     }

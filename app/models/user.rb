@@ -11,6 +11,26 @@ class User < ApplicationRecord
   has_many :photos,
     foreign_key: :owner_id
 
+  has_many :follows,
+    class_name: :Following,
+    foreign_key: :followee_id
+
+  has_many :followings,
+    class_name: :Following,
+    foreign_key: :follower_id
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+  has_many :followees,
+    through: :followings,
+    source: :followee
+
+  has_many :followed_photos,
+    through: :followees,
+    source: :photos
+
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     return @user if @user && @user.is_password?(password)

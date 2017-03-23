@@ -1,6 +1,6 @@
 import React from 'react';
 import MainNavBarContainer from '../main_navbar/main_navbar_container.jsx';
-import FollowButton from '../buttons/follow_button.jsx';
+import FollowButtonContainer from '../buttons/follow_button_container.jsx';
 import EditProfileButton from '../buttons/edit_profile_button.jsx';
 import PhotoGrid from '../photo_grid/photo_grid.jsx';
 import { Link } from 'react-router';
@@ -18,6 +18,10 @@ class ProfilePage extends React.Component {
     this.props.fetchUser();
     this.props.fetchUserPhotos();
     this.props.fetchAllPhotos();
+    this.props.fetchFollowedPhotos();
+    if (this.props.currentUser) {
+      this.props.fetchFollows();
+    }
   }
 
   resetAfterAddOrDelete() {
@@ -35,6 +39,7 @@ class ProfilePage extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.params.id !== this.props.params.id) {
       this.props.fetchUser(newProps.params.id);
+      this.props.fetchFollowedPhotos(newProps.params.id);
       this.props.fetchUserPhotos(newProps.params.id).then(photos => {
         this.setState({photosChoice: photos.photos});
         setTimeout(AOS.refreshHard,500);
@@ -45,24 +50,24 @@ class ProfilePage extends React.Component {
   choice(photos) {
     return () => {
       if (photos === "followed") {
-        this.setState({photosChoice: this.props.followsPhotos});
+        this.setState({photosChoice: this.props.followedPhotos});
         setTimeout(AOS.refreshHard,600);
-        // setTimeout(AOS.refreshHard,900);
+        setTimeout(AOS.refreshHard,900);
       } else if (photos === "mine") {
         this.setState({photosChoice: this.props.userPhotos});
         setTimeout(AOS.refreshHard,100);
-        // setTimeout(AOS.refreshHard,300);
+        setTimeout(AOS.refreshHard,900);
       } else {
         this.setState({photosChoice: this.props.discoverPhotos});
         setTimeout(AOS.refreshHard,600);
-        // setTimeout(AOS.refreshHard,100);
+        setTimeout(AOS.refreshHard,900);
       }
     };
   }
 
   render() {
     let completionBasedDescription;
-    let followOrEditProfileButton = <FollowButton />;
+    let followOrEditProfileButton = <FollowButtonContainer paramsId={this.props.params.id} ownerId={this.props.userId} />;
     if (this.props.currentUser && (this.props.currentUser.id === parseInt(this.props.userId))) {
       followOrEditProfileButton = <EditProfileButton />;
       completionBasedDescription = this.props.profileDesc || 'Thanks for joining! Customize your profile now or start exploring!';

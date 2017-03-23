@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Modal } from 'react-bootstrap';
-import FollowButton from '../buttons/follow_button.jsx';
+import FollowButtonContainer from '../buttons/follow_button_container.jsx';
 import DeletePhotoButtonContainer from '../buttons/delete_photo_button_container.jsx';
 
 class PhotoGrid extends React.Component {
@@ -45,12 +45,12 @@ class PhotoGrid extends React.Component {
   render() {
     let photos = <span className="no-photos-found">No Photos Found - Discover Others or Upload Your Own</span>;
     let selectedPhotoUrl;
-    let followOrDeleteButton = <FollowButton altStyling={"delete"} />;
+    let followOrDeleteButton = <FollowButtonContainer ownerId={this.state.selectedPhoto ? this.state.selectedPhoto.owner_id : null} altStyling={"delete"} />;
     if (this.props.currentUser && this.state.selectedPhoto && (this.props.currentUser.id === parseInt(this.state.selectedPhoto.owner_id))) {
       followOrDeleteButton = <DeletePhotoButtonContainer closeModal={this.close} resetAfterDelete={this.props.resetAfterDelete} photoId={this.state.selectedPhoto.id}/>;
     }
     if (this.state.selectedPhoto) {
-      selectedPhotoUrl = this.state.selectedPhoto.img_url.replace(/\w_0.50\//,"");
+      selectedPhotoUrl = this.state.selectedPhoto.img_url;
     }
     if (this.props.photos && this.props.photos.length >= 1) {
       this.photos = this.props.photos;
