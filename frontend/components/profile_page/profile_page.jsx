@@ -8,11 +8,12 @@ import { Link } from 'react-router';
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {photosChoice: undefined};
+    this.state = {photosChoice: undefined, profileNavSelection: "My Photos", followButtonStatus: undefined};
     this.choice.bind(this);
     this.update = this.setState.bind(this);
     this.resetAfterAddOrDelete = this.resetAfterAddOrDelete.bind(this);
     this.refreshAfterFollow = this.refreshAfterFollow.bind(this);
+    this.syncFollowButtons = this.syncFollowButtons.bind(this);
   }
 
   componentWillMount() {
@@ -53,7 +54,7 @@ class ProfilePage extends React.Component {
       this.props.fetchUser(newProps.params.id);
       this.props.fetchFollowedPhotos(newProps.params.id);
       this.props.fetchUserPhotos(newProps.params.id).then(photos => {
-        this.setState({photosChoice: photos.photos});
+        this.setState({photosChoice: photos.photos, profileNavSelection: "My Photos"});
         setTimeout(AOS.refreshHard,500);
       });
     }
@@ -62,24 +63,38 @@ class ProfilePage extends React.Component {
   choice(photos) {
     return () => {
       if (photos === "followed") {
-        this.setState({photosChoice: this.props.followedPhotos});
+        this.setState({photosChoice: this.props.followedPhotos, profileNavSelection: "Followed"});
         setTimeout(AOS.refreshHard,600);
         setTimeout(AOS.refreshHard,900);
       } else if (photos === "mine") {
-        this.setState({photosChoice: this.props.userPhotos});
+        this.setState({photosChoice: this.props.userPhotos, profileNavSelection: "My Photos"});
         setTimeout(AOS.refreshHard,100);
         setTimeout(AOS.refreshHard,900);
       } else {
-        this.setState({photosChoice: this.props.discoverPhotos});
+        this.setState({photosChoice: this.props.discoverPhotos, profileNavSelection: "Discover"});
         setTimeout(AOS.refreshHard,600);
         setTimeout(AOS.refreshHard,900);
       }
     };
   }
 
+  syncFollowButtons(followStatus) {
+    this.setState({followButtonStatus: followStatus});
+  }
+
   render() {
+    let followedStyle;
+    let myPhotosStyle;
+    let discoverStyle;
+    if (this.state.profileNavSelection === "My Photos") {
+      myPhotosStyle = {"fontWeight": "bold"};
+    } else if (this.state.profileNavSelection === "Followed") {
+      followedStyle = {"fontWeight": "bold"};
+    } else if (this.state.profileNavSelection === "Discover") {
+      discoverStyle = {"fontWeight": "bold"};
+    }
     let completionBasedDescription;
-    let followOrEditProfileButton = <FollowButtonContainer paramsId={this.props.params.id} ownerId={this.props.userId} />;
+    let followOrEditProfileButton = <FollowButtonContainer updateTrigger={this.state.followButtonStatus} paramsId={this.props.params.id} ownerId={this.props.userId} />;
     if (this.props.currentUser && (this.props.currentUser.id === parseInt(this.props.userId))) {
       followOrEditProfileButton = <EditProfileButton />;
       completionBasedDescription = this.props.profileDesc || 'Thanks for joining! Customize your profile now or start exploring!';
@@ -100,15 +115,15 @@ class ProfilePage extends React.Component {
             </ul>
             <a name="profile-nav" />
             <ul className="user-profile-nav">
-              <li><Link to={""} onClick={this.choice("followed")}>Followed</Link></li>
-              <li><Link to={""} onClick={this.choice("mine")}>My Photos</Link></li>
-              <li><Link to={""} onClick={this.choice("discover")}>Discover</Link></li>
+              <li><Link to={""} onClick={this.choice("followed")} style={followedStyle}>Followed</Link></li>
+              <li><Link to={""} onClick={this.choice("mine")} style={myPhotosStyle}>My Photos</Link></li>
+              <li><Link to={""} onClick={this.choice("discover")} style={discoverStyle}>Discover</Link></li>
             </ul>
             {followOrEditProfileButton}
             </div>
           </div>
         </div>
-        <PhotoGrid refreshAfterFollow={this.refreshAfterFollow} resetAfterDelete={this.resetAfterAddOrDelete} currentUser={this.props.currentUser} photos={photosChoice} />
+        <PhotoGrid syncFollowButtons={this.syncFollowButtons} screenSelected={this.state.profileNavSelection} refreshAfterFollow={this.refreshAfterFollow} resetAfterDelete={this.resetAfterAddOrDelete} currentUser={this.props.currentUser} photos={photosChoice} />
         <MainNavBarContainer resetAfterAdd={this.resetAfterAddOrDelete}/>
       </div>
     );

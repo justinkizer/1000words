@@ -21,11 +21,10 @@ class Api::FollowingsController < ApplicationController
 
   def destroy
     @following = Following.find_by(followee_id: following_params[:followee_id])
-    if current_user.id == @following.follower_id
-      @following.destroy
+    if @following.destroy
       render json: ["User unfollowed"], status: 200
     else
-      render json: ["You must be logged in to unfollow users"], status: 401
+      render json: ["An error occured - Please try again"], status: 401
     end
   end
 

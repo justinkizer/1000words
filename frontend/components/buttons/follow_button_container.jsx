@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   ownerId: ownProps.ownerId,
   paramsId: ownProps.paramsId,
   currentUser: state.session.currentUser,
-  refreshAfterFollow: ownProps.refreshAfterFollow
+  refreshAfterFollow: ownProps.refreshAfterFollow,
+  updateTrigger: ownProps.updateTrigger
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

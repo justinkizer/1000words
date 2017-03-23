@@ -28,6 +28,12 @@ class FollowButton extends React.Component {
       } else {
         this.setState({followStatus: "Follow", followAction: this.follow});
       }
+    } else if (newProps.updateTrigger) {
+      if (newProps.currentUserFollows.includes(newProps.ownerId)) {
+        this.setState({followStatus: "Unfollow", followAction: this.unfollow});
+      } else {
+        this.setState({followStatus: "Follow", followAction: this.follow});
+      }
     }
   }
 
@@ -35,11 +41,23 @@ class FollowButton extends React.Component {
     if (this.props.currentUser) {
       let newStatus = this.state.followStatus === "Follow" ? "Unfollow" : "Follow";
       let newFollowAction = newStatus === "Unfollow" ? this.unfollow : this.follow;
-      if (newStatus === "Follow") {
+      if (newStatus === "Follow" && this.props.screenSelected === "Followed" && this.props.refreshAfterFollow) {
         this.state.followAction(this.props.ownerId).then(setTimeout(this.props.closeModal, 400)).then(setTimeout(() => this.props.refreshAfterFollow("Unfollow"), 1200));
+        if (this.props.syncFollowButtons) {
+          this.props.syncFollowButtons(newStatus);
+        }
+        this.setState({followStatus: newStatus, followAction: newFollowAction});
+      } else if (this.props.refreshAfterFollow) {
+        this.state.followAction(this.props.ownerId).then(setTimeout(() => this.props.refreshAfterFollow("Follow"), 1200));
+        if (this.props.syncFollowButtons) {
+          this.props.syncFollowButtons(newStatus);
+        }
         this.setState({followStatus: newStatus, followAction: newFollowAction});
       } else {
-        this.state.followAction(this.props.ownerId).then(setTimeout(() => this.props.refreshAfterFollow("Follow"), 1200));
+        this.state.followAction(this.props.ownerId);
+        if (this.props.syncFollowButtons) {
+          this.props.syncFollowButtons(newStatus);
+        }
         this.setState({followStatus: newStatus, followAction: newFollowAction});
       }
     } else {

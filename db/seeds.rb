@@ -168,3 +168,17 @@ Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/uplo
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076987/l5imnbnx6vus4eb8entp.png", owner_id: @Leia.id})
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076993/po7ing6gx90u1v31plb8.png", owner_id: @Leia.id})
+
+##########
+# Follows:
+##########
+
+# Vader is following Luke and Leia
+Following.create({follower_id: @Vader.id, followee_id: @Luke.id})
+Following.create({follower_id: @Vader.id, followee_id: @Leia.id})
+
+# Luke is following Leia
+Following.create({follower_id: @Luke.id, followee_id: @Leia.id})
+
+# Leia is following Luke
+Following.create({follower_id: @Leia.id, followee_id: @Luke.id})
