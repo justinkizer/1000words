@@ -45,7 +45,7 @@ class PhotoGrid extends React.Component {
   render() {
     let photos = <span className="no-photos-found">No Photos Found - Discover Others or Upload Your Own</span>;
     let selectedPhotoUrl;
-    let followOrDeleteButton = <FollowButtonContainer ownerId={this.state.selectedPhoto ? this.state.selectedPhoto.owner_id : null} altStyling={"delete"} />;
+    let followOrDeleteButton = <FollowButtonContainer refreshAfterFollow={this.props.refreshAfterFollow} ownerId={this.state.selectedPhoto ? this.state.selectedPhoto.owner_id : null} closeModal={this.close} altStyling={"delete"} />;
     if (this.props.currentUser && this.state.selectedPhoto && (this.props.currentUser.id === parseInt(this.state.selectedPhoto.owner_id))) {
       followOrDeleteButton = <DeletePhotoButtonContainer closeModal={this.close} resetAfterDelete={this.props.resetAfterDelete} photoId={this.state.selectedPhoto.id}/>;
     }

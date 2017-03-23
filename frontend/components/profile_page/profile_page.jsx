@@ -12,6 +12,7 @@ class ProfilePage extends React.Component {
     this.choice.bind(this);
     this.update = this.setState.bind(this);
     this.resetAfterAddOrDelete = this.resetAfterAddOrDelete.bind(this);
+    this.refreshAfterFollow = this.refreshAfterFollow.bind(this);
   }
 
   componentWillMount() {
@@ -29,6 +30,17 @@ class ProfilePage extends React.Component {
       this.setState({photosChoice: photos.photos});
       setTimeout(AOS.refreshHard, 500);
     });
+  }
+
+  refreshAfterFollow(followStatus) {
+    if (followStatus === "Follow") {
+      this.props.fetchFollowedPhotos();
+    } else {
+      this.props.fetchFollowedPhotos().then(photos => {
+        this.setState({photosChoice: photos.photos});
+        setTimeout(AOS.refreshHard, 500);
+      });
+    }
   }
 
   componentDidMount() {
@@ -96,7 +108,7 @@ class ProfilePage extends React.Component {
             </div>
           </div>
         </div>
-        <PhotoGrid resetAfterDelete={this.resetAfterAddOrDelete} currentUser={this.props.currentUser} photos={photosChoice} />
+        <PhotoGrid refreshAfterFollow={this.refreshAfterFollow} resetAfterDelete={this.resetAfterAddOrDelete} currentUser={this.props.currentUser} photos={photosChoice} />
         <MainNavBarContainer resetAfterAdd={this.resetAfterAddOrDelete}/>
       </div>
     );

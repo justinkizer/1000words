@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => ({
   currentUserFollows: state.userProfile.currentUserFollows,
   ownerId: ownProps.ownerId,
   paramsId: ownProps.paramsId,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  refreshAfterFollow: ownProps.refreshAfterFollow
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -35,8 +35,13 @@ class FollowButton extends React.Component {
     if (this.props.currentUser) {
       let newStatus = this.state.followStatus === "Follow" ? "Unfollow" : "Follow";
       let newFollowAction = newStatus === "Unfollow" ? this.unfollow : this.follow;
-      this.state.followAction(this.props.ownerId);
-      this.setState({followStatus: newStatus, followAction: newFollowAction});
+      if (newStatus === "Follow") {
+        this.state.followAction(this.props.ownerId).then(setTimeout(this.props.closeModal, 400)).then(setTimeout(() => this.props.refreshAfterFollow("Unfollow"), 1200));
+        this.setState({followStatus: newStatus, followAction: newFollowAction});
+      } else {
+        this.state.followAction(this.props.ownerId).then(setTimeout(() => this.props.refreshAfterFollow("Follow"), 1200));
+        this.setState({followStatus: newStatus, followAction: newFollowAction});
+      }
     } else {
       this.open("/login");
     }
