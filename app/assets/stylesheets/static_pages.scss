@@ -988,3 +988,150 @@ footer > nav > a {
   -webkit-filter: greyscale(0);
   filter: greyscale(0);
 }
+
+.profile-edit-modal-dialog {
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  color: white;
+  min-height: 400px;
+  min-width: 320px;
+  font-family: sans-serif;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,.6);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  padding: 20px;
+}
+
+.edit-profile-form {
+  padding-top: 26%;
+  min-width: 100%;
+  min-height: 150%;
+}
+
+.edit-profile-form .upload-profile-photo-button, .upload-cover-photo-button, .save-profile-changes-button, .edit-profile-form textarea {
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: rgb(32, 32, 32);
+  font-weight: bolder;
+  width: 95%;
+  height: 24px;
+  border-style: none;
+  margin-left: 2%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
+  background: rgb(238,242,244); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef2f4', endColorstr='#f9fafb',GradientType=0 ); /* IE6-9 */
+  transition: ease-in-out;
+}
+
+.edit-profile-form input:focus {
+  box-shadow: inset 0 0 12px rgb(0, 128, 255);
+}
+
+.edit-profile-form .upload-profile-photo-button, .edit-profile-form .upload-cover-photo-button, .edit-profile-form .save-profile-changes-button {
+  height: 42px;
+}
+
+.edit-profile-form .upload-profile-photo-button:hover, .edit-profile-form .upload-profile-photo-button:focus, .edit-profile-form .upload-cover-photo-button:hover, .edit-profile-form .upload-cover-photo-button:focus {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6dbadb+48,66afd6+59,78addc+100 */
+  background: rgb(109,186,219); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(109,186,219,1) 48%, rgba(102,175,214,1) 59%, rgba(120,173,220,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dbadb', endColorstr='#78addc',GradientType=0 ); /* IE6-9 */
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+.disabled-class, input.disabled-class {
+  height: 36px;
+  opacity: .5;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: rgb(32, 32, 32);
+  font-weight: bolder;
+  width: 100%;
+  border-style: none;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
+  background: rgb(238,242,244); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef2f4', endColorstr='#f9fafb',GradientType=0 ); /* IE6-9 */
+  transition: ease-in-out;
+}
+
+input.disabled-class {
+  min-width: 100%;
+}
+
+.edit-profile-form input {
+  width: 97%;
+}
+
+.edit-profile-form h1 {
+  position: absolute;
+  font-size: 30px;
+  bottom: 68%;
+  left: 55%;
+  top: 10%;
+  width: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.my-story-text {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -236%);
+}
+
+.profile-description-edit-box {
+  resize: none;
+  width: 100%;
+  height: 60%;
+}
+
+.edit-profile-form textarea {
+  height: 100px;
+  margin-bottom: -20%;
+}
+
+.upload-profile-photo-button {
+  margin-top: 19%;
+}
+
+.save-profile-changes-button {
+  // margin-top: 19%;
+  height: 68px !important;
+}
+
+.edit-profile-form .save-profile-changes-button:hover, .edit-profile-form .save-profile-changes-button:focus {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4bcb80+48,46c682+59,56cc9b+100 */
+  background: #4bcb80; /* Old browsers */
+  background: -moz-linear-gradient(top, #4bcb80 48%, #46c682 59%, #56cc9b 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #4bcb80 48%,#46c682 59%,#56cc9b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #4bcb80 48%,#46c682 59%,#56cc9b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4bcb80', endColorstr='#56cc9b',GradientType=0 ); /* IE6-9 */
+}

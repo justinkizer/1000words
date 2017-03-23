@@ -68,6 +68,11 @@ export const fetchUser = id => dispatch => (
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
+export const updateUserProfile = user => dispatch => (
+  UserAPIUtil.updateUserProfile(user).then(updatedUser => dispatch(receiveUser(updatedUser)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+);
+
 export const fetchUserPhotos = id => dispatch => (
   PhotosAPIUtil.fetchUserPhotos(id).then(photos => dispatch(receiveUserPhotos(photos)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
