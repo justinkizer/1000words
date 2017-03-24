@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import HomePage from './home_page/home_page.jsx';
 import ProfilePageContainer from './profile_page/profile_page_container.jsx';
+import DiscoverPageContainer from './discover_page/discover_page_container.jsx';
 
 const Root = ({ store }) => {
 
@@ -20,6 +21,8 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ hashHistory } onUpdate={scrollToTopOnRoute} >
         <Route path="/" component={ HomePage }>
+        </Route>
+        <Route path="/discover" component={ DiscoverPageContainer }>
         </Route>
         <Route path="/users/:id" component={ ProfilePageContainer }>
         </Route>

@@ -79,7 +79,7 @@ class MainNavBar extends React.Component {
       <header className="header">
         <nav>
           <Link to={"/"}>1000<p>words</p></Link>
-          <Link to={"/"}>Discover</Link>
+          <Link to={"/discover"}>Discover</Link>
           {loginStatusDependentLinks}
           <Modal
             aria-labelledby='modal-label'

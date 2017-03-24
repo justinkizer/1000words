@@ -9,7 +9,7 @@
 ########
 # Vader:
 ########
-@Vader = User.create(username: "DarthVader", password: "123123123123", profile_desc: "I enjoy long walks on the Death Star and baking snickerdoodles with my cat.", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_1000,h_1000,c_crop,c_fill,r_max,e_saturation:-25/w_200/v1489894963/DarthVaderProfile_f1sxav.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1489957383/VaderPhotos12_hfs2pt.jpg")
+@Vader = User.create(username: "DarthVader", password: "123123123123", profile_desc: "I enjoy long walks on the Death Star and baking snickerdoodles with my cat.", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_1000,h_1000,c_crop,r_max,e_saturation:-25/w_200/v1489894963/DarthVaderProfile_f1sxav.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1489957383/VaderPhotos12_hfs2pt.jpg")
 
 Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1489957372/VaderPhotos15_ogwntr.jpg", owner_id: @Vader.id})
 
@@ -73,7 +73,7 @@ Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/uploa
 # Luke:
 ########
 
-@Luke = User.create(username: "Luke", password: "123123", profile_desc: "I am a Jedi, like my father before me. I also take photos.", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_1000,h_675,c_crop,c_fill,r_max/w_200/v1490071478/vwtrqtxz2jzo2zpagont.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490072385/afl3oujujzdgotvepdgt.jpg")
+@Luke = User.create(username: "Luke", password: "123123", profile_desc: "I am a Jedi, like my father before me. I also take photos.", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_1000,h_675,c_crop,r_max/w_200/v1490071478/vwtrqtxz2jzo2zpagont.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490072385/afl3oujujzdgotvepdgt.jpg")
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490073347/afbs6yqmj3zut2bt9wpm.jpg", owner_id: @Luke.id})
 
@@ -125,7 +125,7 @@ Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/uploa
 # Leia:
 ########
 
-@Leia = User.create(username: "Leia", password: "123123", profile_desc: "#REBEL WITH A CAUSE", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_450,h_350,c_crop,c_fill,g_face,r_max/w_200/v1490073822/ek1qz4sq20xvt8z9cpc7.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg")
+@Leia = User.create(username: "Leia", password: "123123", profile_desc: "#REBEL WITH A CAUSE", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_450,h_350,c_crop,g_face,r_max/w_200/v1490073822/ek1qz4sq20xvt8z9cpc7.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg")
 
 Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076970/k6ekqy9wde8kfjdjo1bp.jpg", owner_id: @Leia.id})
 
