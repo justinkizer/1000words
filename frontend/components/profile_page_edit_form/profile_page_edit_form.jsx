@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router';
 class ProfileEditForm extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { profileDesc: this.props.currentProfileDesc || "Tell your story!", profileImgURL: this.props.currentProfileImgURL, coverImgURL: this.props.currentCoverImgURL};
+    this.state = { profileDesc: this.props.currentProfileDesc, profileImgURL: this.props.currentProfileImgURL, coverImgURL: this.props.currentCoverImgURL};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.upload = this.upload.bind(this);
   }
@@ -64,7 +64,7 @@ class ProfileEditForm extends React.Component {
         <span className="my-story-text">Description:</span>
         <form onSubmit={this.handleSubmit}>
 
-          <textarea className="profile-description-edit-box" type="text" id="profileDescription" value={this.state.profileDesc} onChange={this.update()}/>
+          <textarea className="profile-description-edit-box" type="text" id="profileDescription" placeholder="Tell your story!" value={this.state.profileDesc} onChange={this.update()}/>
           <br/>
           <br/>
           <button onClick={this.upload("Profile")} className="upload-profile-photo-button">Upload a Profile Photo</button>
