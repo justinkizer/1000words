@@ -16,6 +16,7 @@ class EditProfileButton extends React.Component {
   close(){
     this.closing = true;
     this.setState({ showModal: false});
+    setTimeout(this.props.refreshAfterEdit,500);
   }
 
   open(){

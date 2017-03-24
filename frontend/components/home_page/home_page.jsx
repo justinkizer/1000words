@@ -28,9 +28,9 @@ class HomePage extends React.Component {
           </video>
           <footer>
             <nav>
-              <a href="#">Email</a>
+              <a href="mailto:jkizer@gmail.com?subject=You're hired!">Email</a>
               <a href="https://github.com/justinkizer">Github</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/justin-kizer-940336138/">Linkedin</a>
               <div className="footer-background"/>
             </nav>
           </footer>

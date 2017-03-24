@@ -307,10 +307,12 @@ input.disabled-class {
 
 @keyframes fadePersist {
   0% {
+    visibility: hidden;
     opacity: 0;
   }
   100% {
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -824,7 +826,7 @@ footer > nav > a {
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   position: relative;
-  margin-top: 100vh;
+  margin-top: 95vh;
   left: 0%;
   // transform: translateY(10%);
   margin-right: -1.5%;
@@ -1143,7 +1145,8 @@ input.disabled-class {
 }
 
 .discover-photo-grid .photo-grid {
-  margin-top: 96.5vh;
+  margin-top: 86.5vh;
+  padding-top: 5%;
   bottom: -20px;
   left: -0.5%;
   background-color: transparent;
@@ -1153,6 +1156,7 @@ input.disabled-class {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
+  visibility: hidden;
 }
 
 .discover-photo-grid > img:first-of-type {

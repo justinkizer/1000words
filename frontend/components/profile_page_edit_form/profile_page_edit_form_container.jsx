@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
   currentProfileDesc: state.userProfile.profileDesc,
   currentProfileImgURL: state.userProfile.profileImgUrl,
   currentCoverImgURL: state.userProfile.coverImgUrl,
-  rootPath: ownProps.rootPath
+  rootPath: ownProps.rootPath,
+  refreshAfterEdit: ownProps.refreshAfterEdit
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

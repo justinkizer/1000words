@@ -96,7 +96,7 @@ class ProfilePage extends React.Component {
     let completionBasedDescription;
     let followOrEditProfileButton = <FollowButtonContainer updateTrigger={this.state.followButtonStatus} paramsId={this.props.params.id} ownerId={this.props.userId} />;
     if (this.props.currentUser && (this.props.currentUser.id === parseInt(this.props.userId))) {
-      followOrEditProfileButton = <EditProfileButton />;
+      followOrEditProfileButton = <EditProfileButton refreshAfterEdit={this.resetAfterAddOrDelete}/>;
       completionBasedDescription = this.props.profileDesc || 'Thanks for joining! Customize your profile now or start exploring!';
     } else {
       completionBasedDescription = this.props.profileDesc || "This user hasn't written a Profile Description yet, but feel free to imagine something really inspiring!";
