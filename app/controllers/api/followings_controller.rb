@@ -20,7 +20,7 @@ class Api::FollowingsController < ApplicationController
   end
 
   def destroy
-    @following = Following.find_by(followee_id: following_params[:followee_id])
+    @following = Following.find_by(followee_id: following_params[:followee_id], follower_id: current_user.id)
     if @following.destroy
       render json: ["User unfollowed"], status: 200
     else
