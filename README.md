@@ -10,8 +10,7 @@
 
 ### Creating and Updating User Profiles
 
-![image of authentication modal](docs/production_screenshots/Authentication Modal.png)
-
+![image of authentication modal](Authentication Modal.png)
 
 As users' can create new accounts and login/logout, all password information is hashed and salted with BCrypt prior to being stored in the database.
 
@@ -19,7 +18,7 @@ A Demo Login is also available such that visitors may easily access all of the s
 
 On the front-end, the Join/Login/Demo functionality is implemented using a React-Bootstrap modal.
 
-![image of authentication modal](docs/production_screenshots/User Profile.png)
+![image of user profile](User Profile.png)
 
 
 Upon login, users can upload/create their own Profile Photo, Cover Photo, and Profile Description.
@@ -28,7 +27,7 @@ The Profile Photo's url is dynamically modified upon upload, so as to resize the
 
 ### Uploading and Managing Photos
 
-![image of authentication modal](docs/production_screenshots/Photo-Upload Modal.png)
+![image of photo upload modal](Photo-Upload Modal.png)
 
 Users can upload photos to their profile via public URLs, their personal desktop files, or their mobile photo libraries.
 
@@ -38,7 +37,7 @@ Once uploaded, a signed-in user can delete their own photos individually, instan
 
 ### Viewing Varied Feeds of Photos
 
-![image of authentication modal](docs/production_screenshots/Profile Page Photo Feeds.png)
+![image of profile photo feeds](Profile Page Photo Feeds.png)
 
 
 All users (i.e. whether logged in or logged out) can view a "Discover" photo feed linked on the main navigation bar. This feed reflects a Photo Grid React component accessing all photos available in the database, though signed-in users' photos will not be included in the "Discover" feed while logged in.
@@ -60,7 +59,7 @@ There are three Photo Feed options on a given user's Profile Page, being:
     + This view loads the "Discover" feed mentioned above, which randomizes the order of all available photos in the feed upon each load, and is included here for user convenience
 
 
-![image of authentication modal](docs/production_screenshots/Discover Page Feed.png)
+![image of discover feed](Discover Page Feed.png)
 
 
 Each of the three feeds can be scrolled through and viewed as a Photo Grid, but can be further accessed by clicking a photo, which opens a Photo Show modal displaying the image at full-size (or a scaled down size, should the photo's dimensions be larger than the view window).
@@ -71,7 +70,7 @@ In addition, each photo opened via the Show Photo modal reflects a "Follow" butt
 
 ### Following and Unfollowing Other Users
 
-![image of authentication modal](docs/production_screenshots/Photo Show Modal.png)
+![image of photo show modal](Photo Show Modal.png)
 
 
 Users can also follow other users via a "Follow" button located on the user's profile page. If the Photo Show modal is open on the owner's profile page, the "Follow" or "Unfollow" statuses of both button are synchronized appropriately.
