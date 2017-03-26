@@ -8,22 +8,24 @@ class FollowButton extends React.Component {
     this.follow = this.props.createFollowing.bind(this);
     this.unfollow = this.props.deleteFollowing.bind(this);
     this.updateFollowStatus = this.updateFollowStatus.bind(this);
-    this.state = {followStatus: "Follow", followAction: this.follow, showModal: false};
+    this.state = {followStatus: "Follow", followAction: this.follow, showModal:
+      false};
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.closing = false;
-    this.formPath = "/login";
   }
 
   componentWillMount() {
-    setTimeout(() => {if (Array.isArray(this.props.currentUserFollows) && this.props.currentUserFollows.includes(this.props.ownerId)) {
+    setTimeout(() => {if (Array.isArray(this.props.currentUserFollows) &&
+      this.props.currentUserFollows.includes(this.props.ownerId)) {
       this.setState({followStatus: "Unfollow", followAction: this.unfollow});
     }}, 200);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.paramsId !== this.props.paramsId) {
-      if (Array.isArray(newProps.currentUserFollows) && newProps.currentUserFollows.includes(parseInt(newProps.paramsId))) {
+      if (Array.isArray(newProps.currentUserFollows) &&
+        newProps.currentUserFollows.includes(parseInt(newProps.paramsId))) {
         this.setState({followStatus: "Unfollow", followAction: this.unfollow});
       } else {
         this.setState({followStatus: "Follow", followAction: this.follow});
@@ -39,27 +41,43 @@ class FollowButton extends React.Component {
 
   updateFollowStatus() {
     if (this.props.currentUser) {
-      let newStatus = this.state.followStatus === "Follow" ? "Unfollow" : "Follow";
-      let newFollowAction = newStatus === "Unfollow" ? this.unfollow : this.follow;
-      if (newStatus === "Follow" && this.props.screenSelected === "Followed" && this.props.refreshAfterFollow) {
-        this.state.followAction(this.props.ownerId).then(setTimeout(this.props.closeModal, 400)).then(setTimeout(() => this.props.refreshAfterFollow("Unfollow"), 1200));
+      let newStatus = this.state.followStatus === "Follow" ? "Unfollow" :
+        "Follow";
+      let newFollowAction = newStatus === "Unfollow" ? this.unfollow :
+        this.follow;
+
+      if (newStatus === "Follow" && this.props.screenSelected === "Followed" &&
+        this.props.refreshAfterFollow) {
+        this.state.followAction(this.props.ownerId)
+          .then(setTimeout(this.props.closeModal, 400)).then(setTimeout(() =>
+            this.props.refreshAfterFollow("Unfollow"), 1200));
+
         if (this.props.syncFollowButtons) {
           this.props.syncFollowButtons(newStatus);
         }
+
         this.setState({followStatus: newStatus, followAction: newFollowAction});
+
       } else if (this.props.refreshAfterFollow) {
-        this.state.followAction(this.props.ownerId).then(setTimeout(() => this.props.refreshAfterFollow("Follow"), 1200));
+        this.state.followAction(this.props.ownerId).then(setTimeout(() =>
+          this.props.refreshAfterFollow("Follow"), 1200));
+
         if (this.props.syncFollowButtons) {
           this.props.syncFollowButtons(newStatus);
         }
+
         this.setState({followStatus: newStatus, followAction: newFollowAction});
+
       } else {
         this.state.followAction(this.props.ownerId);
+
         if (this.props.syncFollowButtons) {
           this.props.syncFollowButtons(newStatus);
         }
+
         this.setState({followStatus: newStatus, followAction: newFollowAction});
       }
+
     } else {
       this.open("/login");
     }
@@ -72,11 +90,6 @@ class FollowButton extends React.Component {
 
   open(formType){
     this.closing = false;
-    if (formType === "/join") {
-      this.formPath = "/join";
-    } else {
-      this.formPath = "/login";
-    }
     this.setState({ showModal: true });
   }
 
@@ -87,19 +100,22 @@ class FollowButton extends React.Component {
       classType = "delete-button-spacer";
       buttonStyleType = "delete-button";
     }
+
     return (
       <div className={classType}>
-        <button onClick={() => this.updateFollowStatus()} className={buttonStyleType}>{this.state.followStatus}</button>
+        <button onClick={() => this.updateFollowStatus()}
+          className={buttonStyleType}>{this.state.followStatus}
+        </button>
 
-          <Modal
-            aria-labelledby='modal-label'
-            className="modal-style"
-            backdropStyle={backdropStyle}
-            show={this.state.showModal}
-            onHide={this.close}
-          >
+          <Modal aria-labelledby='modal-label' className="modal-style"
+            backdropStyle={backdropStyle} show={this.state.showModal}
+            onHide={this.close}>
+
             <div className="auth-modal-dialog" >
-              <SessionFormContainer followUponLogin={this.updateFollowStatus} rootPath={this.props.rootPath} closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
+              <SessionFormContainer followUponLogin={this.updateFollowStatus}
+                rootPath={this.props.rootPath} closing={this.closing}
+                closeModal={this.close} location={{pathname: "/login"}}
+              />
             </div>
 
           </Modal>

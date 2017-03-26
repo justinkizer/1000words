@@ -181,10 +181,10 @@ a, button {
   height: 24px;
   border-style: none;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
-  background: rgb(238,242,244); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(238,242,244);
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
   transition: ease-in-out;
 }
 
@@ -198,10 +198,10 @@ a, button {
 
 .login-form .auth-button:hover, .login-form .auth-button:focus {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6dbadb+48,66afd6+59,78addc+100 */
-  background: rgb(109,186,219); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(109,186,219,1) 48%, rgba(102,175,214,1) 59%, rgba(120,173,220,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(109,186,219);
+  background: -moz-linear-gradient(top,  rgba(109,186,219,1) 48%, rgba(102,175,214,1) 59%, rgba(120,173,220,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%);
+  background: linear-gradient(to bottom,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%);
 }
 
 .disabled {
@@ -219,10 +219,10 @@ a, button {
   width: 100%;
   border-style: none;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
-  background: rgb(238,242,244); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(238,242,244);
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
   transition: ease-in-out;
 }
 
@@ -398,44 +398,45 @@ input.disabled-class {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
+  cursor: none;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+49,1+100 */
-  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 49%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 49%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49%, rgba(255,255,255,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 49%,rgba(255,255,255,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 49%,rgba(255,255,255,1) 100%);
   transition-timing-function: ease-in-out;
   transition: 0.1;
 }
 
 .here-button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
-  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
 }
 
 .here-button span {
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-    -o-transition: 0.1s;
-    transition: 0.1s;
-    -webkit-transition-delay: 0.1s;
-    -moz-transition-delay: 0.1s;
-    -o-transition-delay: 0.1s;
-    transition-delay: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 .here-button:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: .1s,opacity .6s;
-    -moz-transition: .1s,opacity .6s;
-    -o-transition: .1s,opacity .6s;
-    transition: .1s,opacity .6s;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: .1s,opacity .6s;
+  -moz-transition: .1s,opacity .6s;
+  -o-transition: .1s,opacity .6s;
+  transition: .1s,opacity .6s;
 }
 
 .here-button:before {
@@ -535,21 +536,6 @@ footer > nav > a {
   padding: 20px;
 }
 
-// .cover-photo {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: -2;
-//   min-width: 100%;
-//   min-height: 80%;
-  // animation: fadePersist2;
-  // animation-delay: 0s;
-  // animation-duration: 1s;
-  // animation-iteration-count: 1;
-  // animation-fill-mode: forwards;
-  // opacity: 0.5;
-// }
-//
 @keyframes fadePersist2 {
   0% {
     opacity: .5;
@@ -573,14 +559,6 @@ footer > nav > a {
 
 .profile-photo {
   padding-bottom: 20px;
-  // position: absolute;
-  // top: -11.5%;
-  // left: 41.5%;
-  // z-index: 1;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   -webkit-filter: drop-shadow(0px 0px 5px dimgray);
   filter: drop-shadow(0px 0px 5px dimgray);
 }
@@ -593,7 +571,6 @@ footer > nav > a {
   align-items: center;
   position: absolute;
   top: 91%;
-  // left: -2.5%;
   z-index: 1;
   list-style: none;
   font-family: sans-serif;
@@ -603,7 +580,6 @@ footer > nav > a {
 }
 
 .username-and-description li:first-of-type {
-  // position: absolute;
   left: 40.5%;
   font-weight: bold;
   font-size: 18px;
@@ -621,44 +597,11 @@ footer > nav > a {
   transform: translate(-6%, 0%);
 }
 
-.parallax {
-  // perspective: 1px;
-  // height: 125vh;
-  // z-index: -1;
-  // overflow-x: hidden;
-  // overflow-y: auto;
-  // perspective-origin-x: 100%;
-  // transform: translate(-0.60%, -10.5%);
-  // min-width: 101.2%;
-}
-
-.parallax__layer {
-  // height: 100vh;
-  // position: absolute;
-  // transform-origin-x: 100%;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
-}
-.parallax__layer--base {
-  // height: 40vh;
-  // background-color: #ffffff;
-  // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  // position: absolute;
-  // top: 65%;
-  // min-width: 101.5%;
-  // // min-height: 200%;
-  // z-index: 0;
-  // transform: translate(-1%, 0%);
-  // transform: translateZ(0);
-}
-.parallax__layer--back {
+.cover-photo {
   position: fixed;
   top: 0; left: 50%;
   z-index: -2;
   min-width: 100%;
-  // min-height: 100%;
   max-height: 100%;
   min-height: 85vh;
   max-width: 400%;
@@ -672,62 +615,6 @@ footer > nav > a {
   animation-fill-mode: forwards;
   opacity: 0.5;
 }
-// .cover-photo-spacer {
-//   background-color: #ffffff;
-//   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-//   position: absolute;
-//   top: 80%;
-//   min-width: 101.5%;
-//   min-height: 45%;
-//   z-index: 0;
-//   transform: translate(-1%, 0%);
-// }
-//
-// .parallax {
-//   perspective: 1px;
-//   height: 125vh;
-//   z-index: -1;
-//   overflow-x: hidden;
-//   overflow-y: auto;
-//   perspective-origin-x: 100%;
-//   transform: translate(-0.60%, -10.5%);
-//   min-width: 101.2%;
-// }
-//
-// .parallax__layer {
-//   height: 100vh;
-//   position: absolute;
-//   transform-origin-x: 100%;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-// .parallax__layer--base {
-//   height: 40vh;
-//   background-color: #ffffff;
-//   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-//   position: absolute;
-//   top: 65%;
-//   min-width: 101.5%;
-//   // min-height: 200%;
-//   z-index: 0;
-//   transform: translate(-1%, 0%);
-//   transform: translateZ(0);
-// }
-// .parallax__layer--back {
-//   height: 100vh;
-//   transform: translateZ(-1px) scale(2);
-//   transform: translateY(-5%);
-//   min-width: 100%;
-//   z-index: -2;
-  // animation: fadePersist2;
-  // animation-delay: 0s;
-  // animation-duration: 1s;
-  // animation-iteration-count: 1;
-  // animation-fill-mode: forwards;
-  // opacity: 0.5;
-// }
 
 .edit-button, .follow-button {
   position: absolute;
@@ -743,25 +630,24 @@ footer > nav > a {
   filter: drop-shadow(0px 0px 1px dimgray);
   filter: drop-shadow(0px 0px 1px dimgray);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4eadd6+48,49a1d1+59,589bd6+100 */
-  background: rgb(78,173,214); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(78,173,214);
+  background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%);
+  background: linear-gradient(to bottom,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%);
 }
 
 .edit-button:hover, .follow-button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#65bde3+48,5db2df+59,70aee4+100 */
-  background: rgb(101,189,227); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(101,189,227,1) 48%, rgba(93,178,223,1) 59%, rgba(112,174,228,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(101,189,227);
+  background: -moz-linear-gradient(top,  rgba(101,189,227,1) 48%, rgba(93,178,223,1) 59%, rgba(112,174,228,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%);
+  background: linear-gradient(to bottom,  rgba(101,189,227,1) 48%,rgba(93,178,223,1) 59%,rgba(112,174,228,1) 100%);
 }
 
 .user-profile-nav {
   position: absolute;
   padding: 0px;
   top: 125%;
-  // left: 37.5%;
   min-width: 100%;
   display: flex;
   flex-direction: row;
@@ -812,16 +698,11 @@ footer > nav > a {
 }
 
 .photo-grid {
-  // margin: 0 -500rem;
-/* add back negative margin value */
-  // padding: 0.25rem 500rem;
-  // overflow-x: hidden;
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   position: relative;
   margin-top: 95vh;
   left: 0%;
-  // transform: translateY(10%);
   margin-right: -1.5%;
   margin-left: -2%;
   padding-left: 2%;
@@ -840,7 +721,6 @@ footer > nav > a {
   width:  100%;
   transition-timing-function: ease-in-out;
   transition-delay: .1s;
-  // filter: drop-shadow(0px 0px 5px rgba(123,123,123,.75));
 }
 
 .photo-grid > a:hover {
@@ -850,15 +730,6 @@ footer > nav > a {
 .grid-image:hover {
   cursor: pointer;
   background-color: rgba(0,0,0,0.075);
-  // width: 101%;
-  // height: 101%;
-  // -webkit-filter: brightness(115%);
-  // transition-timing-function: ease-in-out;
-  // -webkit-transition-delay: .1s;
-  // -moz-transition-delay: .1s;
-  // -o-transition-delay: .1s;
-  // transition-delay: .1s;
-  // transition-duration: .5s;
 }
 
 .photo-modal-dialog {
@@ -916,10 +787,10 @@ footer > nav > a {
   filter: drop-shadow(0px 0px 1px dimgray);
   filter: drop-shadow(0px 0px 1px dimgray);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4eadd6+48,49a1d1+59,589bd6+100 */
-  background: rgb(78,173,214); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(78,173,214);
+  background: -moz-linear-gradient(top,  rgba(78,173,214,1) 48%, rgba(73,161,209,1) 59%, rgba(88,155,214,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%);
+  background: linear-gradient(to bottom,  rgba(78,173,214,1) 48%,rgba(73,161,209,1) 59%,rgba(88,155,214,1) 100%);
 }
 
 .left-arrow-photo-modal {
@@ -1019,10 +890,10 @@ footer > nav > a {
   border-style: none;
   margin-left: 2%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
-  background: rgb(238,242,244); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(238,242,244);
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
   transition: ease-in-out;
 }
 
@@ -1036,10 +907,10 @@ footer > nav > a {
 
 .edit-profile-form .upload-profile-photo-button:hover, .edit-profile-form .upload-profile-photo-button:focus, .edit-profile-form .upload-cover-photo-button:hover, .edit-profile-form .upload-cover-photo-button:focus {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6dbadb+48,66afd6+59,78addc+100 */
-  background: rgb(109,186,219); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(109,186,219,1) 48%, rgba(102,175,214,1) 59%, rgba(120,173,220,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(109,186,219);
+  background: -moz-linear-gradient(top,  rgba(109,186,219,1) 48%, rgba(102,175,214,1) 59%, rgba(120,173,220,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%);
+  background: linear-gradient(to bottom,  rgba(109,186,219,1) 48%,rgba(102,175,214,1) 59%,rgba(120,173,220,1) 100%);
 }
 
 .disabled {
@@ -1057,10 +928,10 @@ footer > nav > a {
   width: 100%;
   border-style: none;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eef2f4+48,e4e9ec+59,f9fafb+100 */
-  background: rgb(238,242,244); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgb(238,242,244);
+  background: -moz-linear-gradient(top,  rgba(238,242,244,1) 48%, rgba(228,233,236,1) 59%, rgba(249,250,251,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
+  background: linear-gradient(to bottom,  rgba(238,242,244,1) 48%,rgba(228,233,236,1) 59%,rgba(249,250,251,1) 100%);
   transition: ease-in-out;
 }
 
@@ -1114,16 +985,15 @@ input.disabled-class {
 }
 
 .save-profile-changes-button {
-  // margin-top: 19%;
   height: 68px !important;
 }
 
 .edit-profile-form .save-profile-changes-button:hover, .edit-profile-form .save-profile-changes-button:focus {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4bcb80+48,46c682+59,56cc9b+100 */
-  background: #4bcb80; /* Old browsers */
-  background: -moz-linear-gradient(top, #4bcb80 48%, #46c682 59%, #56cc9b 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #4bcb80 48%,#46c682 59%,#56cc9b 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #4bcb80 48%,#46c682 59%,#56cc9b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #4bcb80;
+  background: -moz-linear-gradient(top, #4bcb80 48%, #46c682 59%, #56cc9b 100%);
+  background: -webkit-linear-gradient(top, #4bcb80 48%,#46c682 59%,#56cc9b 100%);
+  background: linear-gradient(to bottom, #4bcb80 48%,#46c682 59%,#56cc9b 100%);
 }
 
 .discover-photo-grid {
@@ -1139,7 +1009,7 @@ input.disabled-class {
   left: -0.5%;
   background-color: transparent;
   animation: fadePersist;
-  animation-delay: 5s;
+  animation-delay: 8s;
   animation-duration: 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -1148,19 +1018,19 @@ input.disabled-class {
 }
 
 .discover-photo-grid > img:first-of-type {
-    position: fixed;
-    top: -42%;
-    left: -20%;
-    z-index: 0;
-    min-width: 50%;
-    min-height: 80%;
-    animation: fadePersist2;
-    animation-delay: 0s;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    opacity: 0.5;
-    overflow: hidden;
+  position: fixed;
+  top: -42%;
+  left: -20%;
+  z-index: 0;
+  min-width: 50%;
+  min-height: 80%;
+  animation: fadePersist2;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0.5;
+  overflow: hidden;
 }
 
 .discover-text {
@@ -1174,8 +1044,8 @@ input.disabled-class {
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
   animation: fade;
-  animation-delay: .7s;
-  animation-duration: 4s;
+  animation-delay: 1.7s;
+  animation-duration: 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
@@ -1185,15 +1055,15 @@ input.disabled-class {
   padding: 0px;
   position: relative;
   z-index: 1;
-  margin-left: 50.5%;
+  margin-left: 54.5%;
   margin-top: 0.5%;
   color: white;
   font-family: sans-serif;
   font-size: 42px;
   text-shadow: 0px 0px 3px dimgray;
   animation: fade;
-  animation-delay: 2.5s;
-  animation-duration: 3s;
+  animation-delay: 3.5s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;

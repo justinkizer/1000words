@@ -62,16 +62,22 @@ class MainNavBar extends React.Component {
   render () {
     let loginStatusDependentLinks;
     let hereButton = this.props.rootPath !== "/" ? "disabled" : "here-button";
+
     if (this.props.currentUser) {
       loginStatusDependentLinks = [
-        <Link to={""} onClick={this.upload} key={"photoUpload"}>Upload Photo</Link>,
-        <Link to={`/users/${this.props.currentUser.id}`} key={"profile"}>{this.props.currentUser.username}</Link>,
+        <Link to={""} onClick={this.upload} key={"photoUpload"}>
+          Upload Photo
+        </Link>,
+        <Link to={`/users/${this.props.currentUser.id}`}
+          key={"profile"}>{this.props.currentUser.username}</Link>,
         <Link to={"/"} onClick={this.props.logout} key={"logout"}>Logout</Link>
       ];
     } else {
       loginStatusDependentLinks = [
-        <button to={""} onClick={() => this.open("/join")} key={"join"}>Join</button>,
-        <button to={""} onClick={() => this.open("/login")} key={"login"}>Login</button>
+        <button to={""} onClick={() => this.open("/join")}
+          key={"join"}>Join</button>,
+        <button to={""} onClick={() => this.open("/login")}
+          key={"login"}>Login</button>
       ];
     }
 
@@ -81,19 +87,20 @@ class MainNavBar extends React.Component {
           <Link to={"/"}>1000<p>words</p></Link>
           <Link to={"/discover"}>Discover</Link>
           {loginStatusDependentLinks}
-          <Modal
-            aria-labelledby='modal-label'
-            className="modal-style"
-            backdropStyle={backdropStyle}
-            show={this.state.showModal}
-            onHide={this.close}
-          >
+
+          <Modal aria-labelledby='modal-label' className="modal-style"
+            backdropStyle={backdropStyle} show={this.state.showModal}
+            onHide={this.close}>
+
             <div className="auth-modal-dialog" >
-              <SessionFormContainer rootPath={this.props.rootPath} closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
+              <SessionFormContainer rootPath={this.props.rootPath}
+                closing={this.closing} closeModal={this.close}
+                location={{pathname: this.formPath}} />
             </div>
 
           </Modal>
-          <div className="main-navbar-background"/>
+
+          <div className="main-navbar-background" />
         </nav>
         <button className={hereButton} onClick={() => (
           this.open("/join"))} data-hover="join"><span>here</span>

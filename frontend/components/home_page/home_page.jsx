@@ -15,7 +15,9 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <MainNavBarContainer rootPath={"/"} hereButtonClicked={this.state.hereButtonClicked} resetHereButtonClicked={this.resetHereButtonClicked} />
+        <MainNavBarContainer rootPath={"/"}
+          hereButtonClicked={this.state.hereButtonClicked}
+          resetHereButtonClicked={this.resetHereButtonClicked} />
         <div className="hero-text">
           <h1>A picture is worth a thousand words</h1>
           <h2>Share your stories and inspire others</h2>
@@ -23,15 +25,23 @@ class HomePage extends React.Component {
           <h4>Begin your journey</h4>
         </div>
         <div>
-          <video width="1280" height="720" autoPlay="autoplay" loop="loop" muted="">
-            <source src="http://res.cloudinary.com/one-thousand-words/video/upload/v1489792924/home-hero-video_ihl5xo.mp4" type="video/mp4" />
+          <video width="1280" height="720" autoPlay="autoplay" loop="loop"
+            muted="">
+            <source src={
+              "http://res.cloudinary.com/one-thousand-words/video/" +
+              "upload/v1489792924/home-hero-video_ihl5xo.mp4"}
+              type="video/mp4"
+            />
           </video>
           <footer>
             <nav>
               <a href="mailto:jkizer@gmail.com?subject=You're hired!">Email</a>
               <a href="https://github.com/justinkizer">Github</a>
-              <a href="https://www.linkedin.com/in/justin-kizer-940336138/">Linkedin</a>
-              <div className="footer-background"/>
+              <a
+                href="https://www.linkedin.com/in/justin-kizer-940336138/">
+                Linkedin
+              </a>
+              <div className="footer-background" />
             </nav>
           </footer>
         </div>

@@ -3,12 +3,14 @@ import { Link } from 'react-router';
 import { Modal } from 'react-bootstrap';
 import { fetchUser } from '../../util/user_api_util.js';
 import FollowButtonContainer from '../buttons/follow_button_container.jsx';
-import DeletePhotoButtonContainer from '../buttons/delete_photo_button_container.jsx';
+import DeletePhotoButtonContainer from
+  '../buttons/delete_photo_button_container.jsx';
 
 class PhotoGrid extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {selectedPhoto: undefined, ownerProfilePic: undefined, showModal: false};
+    this.state = {selectedPhoto: undefined, ownerProfilePic: undefined,
+      showModal: false};
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.photos = this.props.photos;
@@ -39,23 +41,42 @@ class PhotoGrid extends React.Component {
   open(photo, index){
     this.index = index;
     document.body.removeEventListener('keydown', this.keyThroughPhotos);
-    fetchUser(photo.owner_id).then(user => this.setState({selectedPhoto: photo, ownerProfilePic: user.profile_img_url, showModal: true }));
+    fetchUser(photo.owner_id).then(user => this.setState({selectedPhoto: photo,
+      ownerProfilePic: user.profile_img_url, showModal: true }));
     document.body.addEventListener('keydown', this.keyThroughPhotos);
   }
 
   render() {
-    let photos = <span className="no-photos-found">No Photos Found - Discover Others or Upload Your Own</span>;
+    let photos = <span className="no-photos-found">
+      No Photos Found - Discover Others or Upload Your Own</span>;
     let selectedPhotoUrl;
-    let followOrDeleteButton = <FollowButtonContainer updateTrigger={this.index} syncFollowButtons={this.props.syncFollowButtons} screenSelected={this.props.screenSelected} refreshAfterFollow={this.props.refreshAfterFollow} ownerId={this.state.selectedPhoto ? this.state.selectedPhoto.owner_id : null} closeModal={this.close} altStyling={"delete"} />;
-    if (this.props.currentUser && this.state.selectedPhoto && (this.props.currentUser.id === parseInt(this.state.selectedPhoto.owner_id))) {
-      followOrDeleteButton = <DeletePhotoButtonContainer closeModal={this.close} resetAfterDelete={this.props.resetAfterDelete} photoId={this.state.selectedPhoto.id}/>;
+
+    let followOrDeleteButton = <FollowButtonContainer
+      updateTrigger={this.index}
+      syncFollowButtons={this.props.syncFollowButtons}
+      screenSelected={this.props.screenSelected}
+      refreshAfterFollow={this.props.refreshAfterFollow}
+      ownerId={this.state.selectedPhoto ? this.state.selectedPhoto.owner_id :
+      null} closeModal={this.close} altStyling={"delete"} />;
+
+  if (this.props.currentUser && this.state.selectedPhoto &&
+      (this.props.currentUser.id ===
+      parseInt(this.state.selectedPhoto.owner_id))) {
+        followOrDeleteButton = <DeletePhotoButtonContainer
+        closeModal={this.close} resetAfterDelete={this.props.resetAfterDelete}
+        photoId={this.state.selectedPhoto.id} />;
     }
+
     if (this.state.selectedPhoto) {
       selectedPhotoUrl = this.state.selectedPhoto.img_url;
     }
+
     if (this.props.photos && this.props.photos.length >= 1) {
       this.photos = this.props.photos;
-      photos = this.props.photos.map((photo, index) => <Link key={photo.id} to={""} onClick={() => this.open(photo, index)}><img className="grid-image" src={photo.img_url} data-aos="fade-up"/></Link>);
+      photos = this.props.photos.map((photo, index) => <Link key={photo.id}
+        to={""} onClick={() => this.open(photo, index)}><img
+        className="grid-image" src={photo.img_url} data-aos="fade-up" />
+        </Link>);
     }
 
     return (
@@ -63,23 +84,31 @@ class PhotoGrid extends React.Component {
         <div className="photo-grid">
           {photos}
         </div>
-        <Modal
-          aria-labelledby='modal-label'
-          className="modal-style"
-          backdropStyle={backdropStyle}
-          show={this.state.showModal}
-          onHide={this.close}
-          >
+
+        <Modal aria-labelledby='modal-label' className="modal-style"
+          backdropStyle={backdropStyle} show={this.state.showModal}
+          onHide={this.close}>
+
           <div className="photo-modal-dialog" >
             {followOrDeleteButton}
+
             <div className="photo-show-profile-img">
-              <Link to={`/users/${this.state.selectedPhoto ? this.state.selectedPhoto.owner_id : null}`} onClick={this.close}>
+              <Link to={`/users/${this.state.selectedPhoto ?
+                this.state.selectedPhoto.owner_id : null}`}
+                onClick={this.close}>
                 <img src={this.state.ownerProfilePic} />
               </Link>
             </div>
-            <div className="left-arrow-photo-modal" onClick={() => this.keyThroughPhotos({keyCode: 37})}><span>{"<"}</span></div>
-            <div className="right-arrow-photo-modal" onClick={() => this.keyThroughPhotos({keyCode: 39})}><span>{">"}</span></div>
-            <img src={selectedPhotoUrl}/>
+
+            <div className="left-arrow-photo-modal" onClick={() =>
+              this.keyThroughPhotos({keyCode: 37})}><span>{"<"}</span>
+            </div>
+
+          <div className="right-arrow-photo-modal" onClick={() =>
+              this.keyThroughPhotos({keyCode: 39})}><span>{">"}</span>
+          </div>
+
+          <img src={selectedPhotoUrl} />
           </div>
         </Modal>
       </div>

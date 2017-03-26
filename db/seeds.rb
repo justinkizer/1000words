@@ -122,6 +122,54 @@ Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/uplo
 Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490120527/qg4kfwhbefkcnf0vibf1.jpg", owner_id: @Luke.id})
 
 ########
+# Leia:
+########
+
+@Leia = User.create(username: "Leia", password: "123123", profile_desc: "#REBEL WITH A CAUSE", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_450,h_350,c_crop,g_face,r_max/w_200/v1490073822/ek1qz4sq20xvt8z9cpc7.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg")
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076970/k6ekqy9wde8kfjdjo1bp.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490114620/cm0hwlcfnlves4ae2u5m.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490118179/xi541lhrcmtpuetmurax.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119655/owhqgvn5aogvwdqkmi3u.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490120000/doukox1jfsstondr4rmf.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118659/bdbtjnlulp5odh9wmql3.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119435/rbbndufpexxnbdmysrta.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118514/yhaklkzeehsapvgsbjfd.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/tp4uwfwfvuondpij43ty.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/bv2n6kmcrzo5slfnypxw.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076973/iseq4qwp2lzyi4yaxulc.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076973/a7s43eiocpkdsvb0o3bz.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076979/tfruqwlz7i44uwrxrwmt.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076976/gkowaiwbbou4sn41g1uc.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/oxx6ncrms1uw9y65ulwm.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/m4gk82b846uvftxwxjpk.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/ybir54hz9rxzyecrerne.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076987/pppwdappvkfam0vqssak.jpg", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076987/l5imnbnx6vus4eb8entp.png", owner_id: @Leia.id})
+
+Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076993/po7ing6gx90u1v31plb8.png", owner_id: @Leia.id})
+
+########
 # Han:
 ########
 
@@ -174,54 +222,6 @@ Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/uploa
  Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490382352/wqd2f8a2oucjqxcuirmq.jpg", owner_id: @Han.id})
 
  Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490382518/e7xspwsn18wwdqvalm41.jpg", owner_id: @Han.id})
-
-########
-# Leia:
-########
-
-@Leia = User.create(username: "Leia", password: "123123", profile_desc: "#REBEL WITH A CAUSE", profile_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/w_450,h_350,c_crop,g_face,r_max/w_200/v1490073822/ek1qz4sq20xvt8z9cpc7.png", cover_img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg")
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076970/k6ekqy9wde8kfjdjo1bp.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490114620/cm0hwlcfnlves4ae2u5m.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490118179/xi541lhrcmtpuetmurax.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119655/owhqgvn5aogvwdqkmi3u.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490120000/doukox1jfsstondr4rmf.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118659/bdbtjnlulp5odh9wmql3.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490119435/rbbndufpexxnbdmysrta.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "http://res.cloudinary.com/one-thousand-words/image/upload/v1490118514/yhaklkzeehsapvgsbjfd.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/tp4uwfwfvuondpij43ty.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/bv2n6kmcrzo5slfnypxw.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076972/jnugnjvdhcpivslbw1ye.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076973/iseq4qwp2lzyi4yaxulc.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076973/a7s43eiocpkdsvb0o3bz.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076979/tfruqwlz7i44uwrxrwmt.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076976/gkowaiwbbou4sn41g1uc.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/oxx6ncrms1uw9y65ulwm.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/m4gk82b846uvftxwxjpk.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076986/ybir54hz9rxzyecrerne.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076987/pppwdappvkfam0vqssak.jpg", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076987/l5imnbnx6vus4eb8entp.png", owner_id: @Leia.id})
-
-Photo.create({img_url: "https://res.cloudinary.com/one-thousand-words/image/upload/v1490076993/po7ing6gx90u1v31plb8.png", owner_id: @Leia.id})
 
 ####################
 # Boba Fett:
@@ -364,9 +364,10 @@ Following.create({follower_id: @Luke.id, followee_id: @Yoda.id})
 Following.create({follower_id: @Leia.id, followee_id: @Luke.id})
 Following.create({follower_id: @Leia.id, followee_id: @Han.id})
 
-# Han is following Luke and Leia
+# Han is following Luke, Leia, and Boba
 Following.create({follower_id: @Han.id, followee_id: @Luke.id})
 Following.create({follower_id: @Han.id, followee_id: @Leia.id})
+Following.create({follower_id: @Han.id, followee_id: @Boba.id})
 
 # Boba Fett is following Han and Vader
 

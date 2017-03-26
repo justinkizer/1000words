@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import ProfileEditFormContainer from '../profile_page_edit_form/profile_page_edit_form_container.jsx';
+import ProfileEditFormContainer from
+  '../profile_page_edit_form/profile_page_edit_form_container.jsx';
 import { createPhoto } from '../../actions/user_profile_actions.js';
 
 class EditProfileButton extends React.Component {
@@ -29,15 +30,14 @@ class EditProfileButton extends React.Component {
       <div>
         <button className="edit-button" onClick={this.open}>Edit</button>
 
-        <Modal
-          aria-labelledby='modal-label'
-          className="modal-style"
-          backdropStyle={backdropStyle}
-          show={this.state.showModal}
-          onHide={this.close}
-        >
+        <Modal aria-labelledby='modal-label' className="modal-style"
+          backdropStyle={backdropStyle} show={this.state.showModal}
+          onHide={this.close}>
+
           <div className="profile-edit-modal-dialog" >
-            <ProfileEditFormContainer rootPath={this.props.rootPath} closing={this.closing} closeModal={this.close} location={{pathname: this.formPath}}/>
+            <ProfileEditFormContainer rootPath={this.props.rootPath}
+              closing={this.closing} closeModal={this.close}
+              location={{pathname: this.formPath}} />
           </div>
 
         </Modal>

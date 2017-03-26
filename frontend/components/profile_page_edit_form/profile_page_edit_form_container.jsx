@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileEditForm from './profile_page_edit_form.jsx';
-import { createPhoto, updateUserProfile } from '../../actions/user_profile_actions.js';
+import { createPhoto, updateUserProfile } from
+  '../../actions/user_profile_actions.js';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
@@ -16,8 +17,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    updateUserProfile: user => dispatch(updateUserProfile(user)),
-    createPhoto: photo => dispatch(createPhoto(photo))
+  updateUserProfile: user => dispatch(updateUserProfile(user)),
+  createPhoto: photo => dispatch(createPhoto(photo))
 });
 
 export default connect(

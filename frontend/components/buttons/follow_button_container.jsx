@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { createFollowing, deleteFollowing } from '../../actions/user_profile_actions.js';
+import { createFollowing, deleteFollowing } from
+  '../../actions/user_profile_actions.js';
 import FollowButton from './follow_button.jsx';
 
 const mapStateToProps = (state, ownProps) => ({

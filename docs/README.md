@@ -61,7 +61,7 @@ By the project's deadline, this application will fulfill the following requireme
 **Objective:** Complete Discover page.
 
 ### Bonus features (TBD)
-- [ ] Discover photos feature
-- [ ] Location-based photo lookup/discovery with Google Maps API
 - [ ] Tags
 - [ ] Notifications
+- [ ] User Account Deletion/Username-Password Update
+- [ ] Additional Optimizations for Larger Input Sizes

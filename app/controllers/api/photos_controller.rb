@@ -14,9 +14,9 @@ class Api::PhotosController < ApplicationController
     if params[:user_id]
       @photos = User.find(params[:user_id]).photos
     elsif current_user
-        @photos = Photo.all - current_user.photos
+        @photos = (Photo.all - current_user.photos).shuffle
     else
-        @photos = Photo.all
+        @photos = Photo.all.shuffle
     end
     render :index
   end
