@@ -10,7 +10,7 @@
 
 ### Creating and Updating User Profiles
 
-![image of authentication modal](Authentication%20Modal.png)
+![image of authentication modal](docs/production_screenshots/Authentication%20Modal.png)
 
 As users' can create new accounts and login/logout, all password information is hashed and salted with BCrypt prior to being stored in the database.
 
