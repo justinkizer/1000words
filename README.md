@@ -12,7 +12,7 @@
 
 ![image of authentication modal](docs/production_screenshots/Authentication%20Modal.png)
 
-As users' can create new accounts and login/logout, all password information is hashed and salted with BCrypt prior to being stored in the database.
+As users can create new accounts and login/logout, all password information is hashed and salted with BCrypt prior to being stored in the database.
 
 A Demo Login is also available such that visitors may easily access all of the site's features.
 
@@ -46,7 +46,7 @@ There are three Photo Feed options on a given user's Profile Page, being:
 
   - Followed
 
-    + This view reflects photos from users that the owner of this profile previously "followed" and groups said photos by owner/user
+    + This view reflects photos from users that the profile owner previously "followed", which are grouped by owner/user
 
 
   - My Photos
@@ -56,7 +56,7 @@ There are three Photo Feed options on a given user's Profile Page, being:
 
   - Discover
 
-    + This view loads the "Discover" feed mentioned above, which randomizes the order of all available photos in the feed upon each load, and is included here for user convenience
+    + This view loads the "Discover" feed mentioned above, which randomizes the order of all available photos in the feed upon each load, and is linked here for user convenience
 
 
 ![image of discover feed](docs/production_screenshots/Discover%20Page%20Feed.png)
