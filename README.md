@@ -2,7 +2,7 @@
 
 [1000words Live][1000words]
 
-[1000words]: http://one-thousand-words.herokuapp.com/
+[1000words]: http://www.1000words.world/
 
 1000words is a Full-Stack, Single-Page photography sharing web application inspired by 500px.com, built with React/Redux on a Rails/Postgres backend.
 
