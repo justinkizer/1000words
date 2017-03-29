@@ -38,7 +38,7 @@ class HomePage extends React.Component {
               <a href="mailto:jkizer@gmail.com?subject=You're hired!">Email</a>
               <a href="https://github.com/justinkizer">Github</a>
               <a
-                href="https://www.linkedin.com/in/justin-kizer-940336138/">
+                href="https://www.linkedin.com/in/justinkizer/">
                 Linkedin
               </a>
               <div className="footer-background" />
