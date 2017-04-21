@@ -149,6 +149,33 @@ a, button {
 
 }
 
+.pass-strength-tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  font-size: 14px;
+  border-radius: 6px;
+  height: 45%;
+  width: 250px;
+  position: absolute;
+  right: -90%;
+  top: 23.5%;
+  background-color: rgba(0,0,0,0.60);
+}
+
+.pass-strength-tip > p, .pass-strength-tip > strong {
+  box-sizing: border-box;
+  margin-top: -2%;
+}
+
+.pass-strength-tip > a {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: none;
+}
+
 .pass-container > span {
   position: fixed;
   left: 95%;
@@ -161,8 +188,12 @@ a, button {
   margin-bottom: 10px;
 }
 
-.pass-input:hover + span, .pass-input:focus + span {
+.pass-input:hover + span, .pass-input:focus + span, .pass-input:hover + span + span, .pass-input:focus + span + span {
   opacity: 1;
+}
+
+.pass-input:hover + span + span > a, .pass-input:focus + span + span > a {
+  cursor: pointer;
 }
 
 .login-form {
@@ -503,8 +534,8 @@ footer > nav {
 
 footer > nav > a {
   z-index: 2;
-  margin-left: 18%;
-  margin-right: 18%;
+  margin-left: 10%;
+  margin-right: 10%;
   text-shadow: 0px 0px 1px dimgray;
 }
 
@@ -651,16 +682,12 @@ footer > nav > a {
   min-width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   list-style: none;
   font-family: sans-serif;
   color: gray;
   font-size: 16px;
-}
-
-.user-profile-nav > li:last-of-type > a {
-  border-right: none;
 }
 
 .no-photos-found {
@@ -676,21 +703,15 @@ footer > nav > a {
 }
 
 .user-profile-nav li a {
-  position: relative;
-  border-right: 1px solid gray;
-  padding-right: 40px;
   cursor: pointer;
-  color: gray
+  color: gray;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
-.user-profile-nav li:last-of-type {
-  border-right: none;
-  margin-right: 34%;
-}
-
-.user-profile-nav li:first-of-type {
-  border-left: none;
-  margin-left: 36%;
+.my-photos-link {
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
 }
 
 .user-profile-nav li:hover {

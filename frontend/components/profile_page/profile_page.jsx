@@ -127,13 +127,12 @@ class ProfilePage extends React.Component {
               <li>{this.props.username}</li>
               <li>{completionBasedDescription}</li>
             </ul>
-            <a name="profile-nav" />
             <ul className="user-profile-nav">
               <li><Link to={""} onClick={this.choice("followed")}
                 style={followedStyle}>Followed</Link></li>
-              <li><Link to={""} onClick={this.choice("mine")}
+              <li><Link to={""} className="my-photos-link" onClick={this.choice("mine")}
                 style={myPhotosStyle}>My Photos</Link></li>
-              <li><Link to={"/discover"}
+              <li><Link to={""} onClick={this.choice("discover")}
                 style={discoverStyle}>Discover</Link></li>
             </ul>
             {followOrEditProfileButton}

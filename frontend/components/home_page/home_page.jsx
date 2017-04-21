@@ -36,10 +36,11 @@ class HomePage extends React.Component {
           <footer>
             <nav>
               <a href="mailto:jkizer@gmail.com?subject=You're hired!">Email</a>
+              <a href="http://justinkizer.tech">Portfolio</a>
               <a href="https://github.com/justinkizer">Github</a>
               <a
-                href="https://www.linkedin.com/in/justinkizer/">
-                Linkedin
+                href="https://linkedin.com/in/justinkizer/">
+                LinkedIn
               </a>
               <div className="footer-background" />
             </nav>

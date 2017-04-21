@@ -13,10 +13,13 @@ class Api::PhotosController < ApplicationController
   def index
     if params[:user_id]
       @photos = User.find(params[:user_id]).photos
+        .sort_by(&:created_at)
     elsif current_user
-        @photos = (Photo.all - current_user.photos).shuffle
+      @photos = (Photo.all - current_user.photos).shuffle.take(25)
+        .sort_by(&:created_at)
     else
-        @photos = Photo.all.shuffle
+      @photos = Photo.all.shuffle.take(25)
+        .sort_by(&:created_at)
     end
     render :index
   end

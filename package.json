@@ -21,7 +21,8 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1",
-    "what-input": "^4.1.1"
+    "what-input": "^4.1.1",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {},
   "scripts": {

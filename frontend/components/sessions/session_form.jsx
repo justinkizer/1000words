@@ -2,12 +2,20 @@ import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
 import TimerMixin from 'react-timer-mixin';
+import zxcvbn from 'zxcvbn';
 
 class SessionForm extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { username: "", password: "", formPath:
-      this.props.location.pathname, errors: [], red: false, green: false};
+    this.state = {
+      username: "",
+      password: "",
+      formPath: this.props.location.pathname,
+      errors: [],
+      red: false,
+      green: false,
+      passwordStrength: '0 seconds'
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -17,10 +25,18 @@ class SessionForm extends React.Component {
     return e => {
       if (field === "password") {
         if (e.target.value.length > 5) {
-          this.setState({[field]: e.target.value, red: false, green: true});
+          this.setState({[field]: e.target.value, red: false, green: true,
+            passwordStrength:
+              zxcvbn(e.target.value).crack_times_display
+                .online_no_throttling_10_per_second
+          });
         }
         else if (e.target.value.length > 0) {
-          this.setState({[field]: e.target.value, red: true, green: false});
+          this.setState({[field]: e.target.value, red: true, green: false,
+            passwordStrength:
+              zxcvbn(e.target.value).crack_times_display
+                .online_no_throttling_10_per_second
+          });
         } else {
           this.setState({[field]: e.target.value, red: false, green: false});
         }
@@ -141,7 +157,21 @@ class SessionForm extends React.Component {
             placeholder="Password" disabled={this.toggleDisable}
             style={styleColor}/>
           <span className="pass-tip">Passwords must be at least 6
-            characters</span>
+            characters
+          </span>
+          <span className="pass-strength-tip">
+            <p>Always choose a strong password!</p>
+            <p>This password could be cracked in:</p>
+            <br />
+            <strong>{`${this.state.passwordStrength}`}</strong>
+            <p />
+            <br />
+            <a href={'https://blogs.dropbox.com/tech/2012/04/'
+              .concat('zxcvbn-realistic-password-strength-estimation/')}
+            >
+              How is this calculated?
+            </a>
+          </span>
           <br />
           <br />
           <input type="submit" className={disabledClass}
