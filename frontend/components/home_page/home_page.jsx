@@ -42,6 +42,10 @@ class HomePage extends React.Component {
                 href="https://linkedin.com/in/justinkizer/">
                 LinkedIn
               </a>
+              <a
+                href="https://angel.co/justin-kizer/">
+                AngelList
+              </a>
               <div className="footer-background" />
             </nav>
           </footer>

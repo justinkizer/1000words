@@ -75,7 +75,8 @@ class PhotoGrid extends React.Component {
       this.photos = this.props.photos;
       photos = this.props.photos.map((photo, index) => <Link key={photo.id}
         to={""} onClick={() => this.open(photo, index)}><img
-        className="grid-image" src={photo.img_url.replace(/\/upload\//, '/upload/w_500/')} data-aos="fade-up" />
+        className="grid-image" src={photo.img_url.replace(/\/upload\//,
+          '/upload/w_500/')} data-aos="fade-up" />
         </Link>);
     }
 
